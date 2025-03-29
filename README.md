@@ -28,52 +28,52 @@
     <tr>
       <td>Product Owner</td>
       <td>Guilherme Valim</td>
-      <td><a href="https://github.com/guilhermevalim" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Scrum Master</td>
       <td>Jhonatan Rossi</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>Alexandre Romão</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>Brenda Medeiros</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>Elder Henrique</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>Eruano Rubens</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>Giovana Marques</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>João Pedro Menegasso</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>João Victor Fonseca</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
       <td>Dev Team</td>
       <td>Manuela Brito</td>
-      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/issues/1#issue-2958064997" alt="GitHub"></a></td>
+      <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
   </tbody>
 </table>
