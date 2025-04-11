@@ -102,7 +102,6 @@ Este projeto tem como objetivo desenvolver uma aplicação de cálculo de sequê
 <ul>
   <li>Visualg (para desenvolvimento da aplicação)</li>
   <li>Git (para controle de versão)</li>
-  <li>Jira (para organização do projeto)
   <li>GitHub (para armazenamento de códigos e documentação)</li>
 </ul>
 
