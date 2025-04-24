@@ -1,6 +1,8 @@
-Algoritmo "Menufunções"
+Algoritmo "Menufunï¿½ï¿½es"
 
 Var
+ f1, f2, f3, limite, cont: Inteiro
+   A1, A2, A3, contador :inteiro
 
    opcao : inteiro
 
@@ -9,32 +11,32 @@ Var
 procedimento menuprincipal()
 inicio
 
-   escrevaL("-Escolha uma das opções:")
+   escrevaL("-Escolha uma das opï¿½ï¿½es:")
 
 
    escrevaL("")//quebradelinha
 
-   escrevaL("1. Sequência de Fibonacci")
-   escrevaL("2. Números Triangulares")
-   escrevaL("3. Sequência de Números Primos")
-   escrevaL("4. Sequência Fatorial")
-   escrevaL("5. Sequência de Quadrados Perfeitos")
-   escrevaL("6. Sequência de Cubos")
-   escrevaL("7. Sequência Geométrica")
-   escrevaL("8. Sequência Alternada")
-   escrevaL("9. Sequência Tribonacci")
+   escrevaL("1. Sequï¿½ncia de Fibonacci")
+   escrevaL("2. Nï¿½meros Triangulares")
+   escrevaL("3. Sequï¿½ncia de Nï¿½meros Primos")
+   escrevaL("4. Sequï¿½ncia Fatorial")
+   escrevaL("5. Sequï¿½ncia de Quadrados Perfeitos")
+   escrevaL("6. Sequï¿½ncia de Cubos")
+   escrevaL("7. Sequï¿½ncia Geomï¿½trica")
+   escrevaL("8. Sequï¿½ncia Alternada")
+   escrevaL("9. Sequï¿½ncia Tribonacci")
    escrevaL("10. Encerrar o programa")
 
    escrevaL("")//quebradelinha
 
-   escreva("-Opção: ")
+   escreva("-Opï¿½ï¿½o: ")
    leia(opcao)
 
    enquanto (opcao <1) ou (opcao >10) faca
 
       limpatela
 
-      escrevaL("Não temos essa opção no menu.")
+      escrevaL("Nï¿½o temos essa opï¿½ï¿½o no menu.")
       escrevaL("")//quebradelinha
       menuprincipal()
    fimenquanto
@@ -54,6 +56,84 @@ Inicio
    
    caso 1
    //fibonacci
+   repita
+      escreval ("")
+      escreval (" ____________________________________________ ")
+      escreval ("|                                            |")
+      escreval ("| A sequÃªncia de Fibonacci Ã© uma sucessÃ£o    |")
+      escreval ("| infinita de nÃºmeros naturais proposta pelo |")
+      escreval ("| matemÃ¡tico Leonardo Pisa, mais conhecido   |")
+      escreval ("| como Fibonacci. Ela Ã© formada pela soma    |")
+      escreval ("| dos dois nÃºmeros anteriores, comeÃ§ando     |")
+      escreval ("| com 0 e 1, e continua com 1, 2, 3, 5, 8,   |")
+      escreval ("| 13, 21, 34, 55, 89, 144, etc.              |")
+      escreval ("|____________________________________________|")
+      escrevaL (" ____________________________________________ ")
+      escrevaL ("|                                            |")
+      escrevaL ("|  SEQUENCIA DE FIBONACCI, (min 1Â°max 47Â°)   |")
+      escrevaL ("|____________________________________________|")
+      escreval ("")
+      escreval(" ____________________________ ")
+      escreval("|                            |")
+      escreval("|      Menu: FIBONACCI       |")
+      escreval("|____________________________|")
+      escreval("|                            |")
+      escreval("|          OPÃ‡Ã”ES            |")
+      escreval("|                            |")
+      escreval("| 1- SequÃªncia de Fibonacci  |")
+      escreval("| 2- Escolha uma posiÃ§Ã£o     |")
+      escreval("| 3- LIMPAR                  |")
+      escreval("| 4- Sair                    |")
+      escreval("|____________________________|")
+      escreval("")
+      escreva("Escolher, Retorne as OpÃ§Ãµes => ")
+      leia (A1)
+      escreval("")
+      escolha A1
+      caso 1
+         escreva("Digite um numero => ")
+         escreva ("")
+         leia (limite)
+         f1 <--1
+         f2 <-1
+         cont <-0
+         enquanto (cont<limite)faca
+            f3<-f1+f2
+            f1<-f2
+            f2<-f3
+            cont <-cont+1
+            contador <-cont+0
+            escreval ("")
+            escreval (contador,"ÂºPosiÃ§Ã£o = ", f3)
+         fimenquanto
+         escreval ("")
+      caso 2
+         escreval ("")
+         escreva("Digite a posiÃ§Ã£o desejada na sequÃªncia de Fibonacci=> ")
+         escreva ("")
+         leia (limite)
+         escreva ("")
+         f1 <--1
+         f2 <-1
+         cont <-0
+         escreva ("")
+         enquanto (cont<limite)faca
+            f3<-f1+f2
+            f1<-f2
+            f2<-f3
+            cont <-cont+1
+            contador <-cont+0
+
+         fimenquanto
+         escreval ("")
+         escreval (contador,"ÂºPosiÃ§Ã£o = ", f3)
+      caso 3
+         limpatela
+      fimescolha
+   ate A1 =4
+
+
+fimescolha
    
    caso 2
    // n.triangulares
