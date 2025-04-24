@@ -1,7 +1,9 @@
 Algoritmo "Menufun��es"
+// Disciplina   : [Linguagem e L�gica de Programa��o] 
+// Professor   : Antonio Carlos Nicolodi 
 
 Var
- f1, f2, f3, limite, cont: Inteiro
+ f1, f2, f3, limite, cont, opcaoMenuCubos,numeroCubo, cubo: Inteiro
    A1, A2, A3, contador :inteiro
 
    opcao : inteiro
@@ -45,7 +47,132 @@ inicio
 
 fimprocedimento
 
+Procedimento exibirMenuCubos()
+Inicio
 
+   Escreval(" _______________________________")
+   Escreval("|      MENU NÚMEROS CÚBICOS     |")
+   Escreval("| 1 - Verificar se cúbico       |")
+   Escreval("| 2 - Mostrar números cúbicos   |")
+   Escreval("| 3 - Listar números cúbicos    |")
+   Escreval("| 4 - Explicação Números Cúbicos|")
+   Escreval("| 5 - Retornar Menu Principal   |")
+   Escreval("|_______________________________|")
+
+   Escreva("Selecione uma Opção: ")
+   Leia(opcaoMenuCubos)
+
+
+FimProcedimento
+
+Procedimento menuCubos()
+Inicio
+   exibirMenuCubos()
+
+   Enquanto (opcaoMenuCubos < 1) ou (opcaoMenuCubos > 5) faca
+      LimpaTela
+      Escreval("Opção selecionada inválida. Tente novamente.")
+      exibirMenuCubos()
+   FimEnquanto
+
+FimProcedimento
+
+Procedimento opcaoEscolhida()
+Inicio
+
+   menuCubos()
+
+   Escolha opcaoMenuCubos
+
+   caso 1
+      LimpaTela
+      Escreva("Digite um número inteiro: ")
+      Leia(numeroCubo)
+
+      contador <- 1
+
+      Enquanto ((contador * contador * contador) < numeroCubo) faca
+         contador  <- contador + 1
+      FimEnquanto
+
+      // Verifica se é exatamente igual
+      Se (contador * contador * contador = numeroCubo) entao
+         LimpaTela
+         Escreval(" ____________________________________")
+         Escreval("",numeroCubo, " é um cubo perfeito!              ")
+         Escreval(" Pois ,", contador, " X", contador, " X", contador, " =",contador, "^3 =", numeroCubo)
+         Escreval(" ____________________________________")
+      Senao
+         Limpatela
+         Escreval(" ___________________________________")
+         Escreval("", numeroCubo, " não é um cubo perfeito.")
+         Escreval(" ___________________________________")
+      Fimse
+
+   caso 2
+      LimpaTela
+      Escreva("Digite um número inteiro: ")
+      Leia(numeroCubo)
+
+      contador <- 1
+      cubo <- contador * contador * contador
+
+      LimpaTela
+
+      Escreval("Cubos perfeitos até ", numeroCubo, ":")
+
+      Escreval(" ____________________________________")
+      Escreval("")
+      Enquanto (cubo <= numeroCubo) faca
+         escreval(" ", contador, "^3 = ", cubo)
+         contador <- contador + 1
+         cubo <- contador * contador * contador
+      FimEnquanto
+
+      Escreval("_____________________________________")
+
+   caso 3
+      LimpaTela
+      Escreva("Digite um número inteiro: ")
+      Leia(numeroCubo)
+
+      Limpatela
+
+      contador <- 1
+
+      Escreval("Números de 1 até ", numeroCubo, " elevados ao cubo:")
+
+      Escreval(" ____________________________________")
+      Escreval("")
+
+      Enquanto (contador <= numeroCubo) faca
+         cubo <- contador * contador * contador
+         Escreval(contador, "^3 = ", cubo)
+         contador <- contador + 1
+      Fimenquanto
+
+      Escreval("____________________________________")
+
+   caso 4
+      LimpaTela
+      Escreval(" _______________________________")
+      Escreval("|         CUBOS PERFEITOS       |")
+      Escreval("|_______________________________|")
+      Escreval("| Um cubo perfeito é um número  |")
+      Escreval("| inteiro que resulta da        |")
+      Escreval("| multiplicação de um número    |")
+      Escreval("| por ele mesmo três vezes, ou  |")
+      Escreval("| seja: n × n × n = n³.         |")
+      Escreval("| Exemplos: 1, 8, 27, 64, 125...|")
+      Escreval("|_______________________________|")
+
+   caso 5
+      limpatela
+      menuprincipal()
+
+   FimEscolha
+
+FimProcedimento
 
 Inicio
 
@@ -148,7 +275,9 @@ fimescolha
    //quadrados perfeitos
    
    caso 6
-   //sequencia de cubos
+   repita
+   opcaoEscolhida()
+ ate (opcaoMenuCubos = 5)
    
    caso 7
    //sequencia geometrica
