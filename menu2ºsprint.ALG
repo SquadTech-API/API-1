@@ -1,11 +1,10 @@
 Algoritmo "Menufunï¿½ï¿½es"
-// Disciplina   : [Linguagem e Lógica de Programação] 
-// Professor   : Antonio Carlos Nicolodi 
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
 
 Var
- f1, f2, f3, limite, cont, opcaoMenuCubos,numeroCubo, cubo: Inteiro
-   A1, A2, A3, contador :inteiro
-
+   f1, f2, f3, limite, cont, opcaoMenuCubos,numeroCubo, cubo: Inteiro
+   A1, A2, A3,I1,P1,N1,C1,D,C,N,OpcMenuPrimos,contador :inteiro
    opcao : inteiro
 
    //procimento para ir ao menu:
@@ -45,6 +44,95 @@ inicio
 
    limpatela
 
+fimprocedimento
+
+procedimento ExibirMenuPrimos()
+inicio
+   escreval(" __________________________")
+   escreval("|                          |")
+   escreval("|   Menu: NUMEROS PRIMOS   |")
+   escreval("|__________________________|")
+   escreval("|         OPÇÕES           |")
+   escreval("|                          |")
+   escreval("| OPÇÃO 1 - Divisores      |")
+   escreval("| OPÇÃO 2 - Sequencia      |")
+   escreval("| OPÇÃO 3 - Limpar tela    |")
+   escreval("| OPÇÃO 4 - Definição      |")
+   escreval("| OPÇÃO 5 - Sair           |")
+   escreval("|__________________________|")
+   escreva(" Digite uma opção => ")
+   leia (OpcMenuPrimos)
+fimprocedimento
+
+procedimento MenuPrimos()
+inicio
+   ExibirMenuPrimos()
+   enquanto (OpcMenuPrimos > 5) ou (OpcMenuPrimos < 1) faca
+      limpatela
+      escreval("Escolha uma opção valida!")
+      ExibirMenuPrimos()
+   fimenquanto
+fimprocedimento
+
+procedimento OpcEscolhidaPrimos()
+inicio
+   MenuPrimos()
+   escolha OpcMenuPrimos
+   caso 1
+      limpatela
+      escreval("")
+      escreval ("Digite um numero inteiro:")
+      leia(N)
+      C <- N
+      D <- 0
+      escreva("Divisores :")
+      repita
+         se (N%C=0)entao
+            escreva(C)
+            D<- D+1
+         fimse
+         C <-C-1
+      ate (C<1)
+      escreval ("")
+      se (D=2) entao
+         escreval(N, " É um numero primo!")
+      senao
+         escreval(N," Não é um numero primo!")
+      fimse
+
+   caso 2
+      limpatela
+      escreval("")
+      escreval(" Digite um numero:")
+      leia (N1)
+      escreval("Sequencia de numeros primos:")
+      para C1 <- 1 ate N1 faca
+         P1 <-0
+         para I1 <- 1 ate C1 faca
+            se (C1%I1=0) entao
+               P1 <- P1+1
+            fimse
+         fimpara
+         se (P1=2) entao
+            escreva(C1)
+         fimse
+      fimpara
+      escreval("")
+
+   caso 3
+      limpatela
+
+   caso 4
+      limpatela
+      escreval(" ______________________________________________")
+      escreval("|                                              |")
+      escreval("|Um número primo é aquele que possue apenas 2  |")
+      escreval("|divisores , o numero 1 e ele mesmo.           |")
+      escreval("|______________________________________________|")
+
+   caso 5
+      escreval("")
+   fimescolha
 fimprocedimento
 
 Procedimento exibirMenuCubos()
@@ -180,115 +268,117 @@ Inicio
    menuprincipal()
 
    escolha opcao
-   
+
    caso 1
-   //fibonacci
-   repita
-      escreval ("")
-      escreval (" ____________________________________________ ")
-      escreval ("|                                            |")
-      escreval ("| A sequÃªncia de Fibonacci Ã© uma sucessÃ£o    |")
-      escreval ("| infinita de nÃºmeros naturais proposta pelo |")
-      escreval ("| matemÃ¡tico Leonardo Pisa, mais conhecido   |")
-      escreval ("| como Fibonacci. Ela Ã© formada pela soma    |")
-      escreval ("| dos dois nÃºmeros anteriores, comeÃ§ando     |")
-      escreval ("| com 0 e 1, e continua com 1, 2, 3, 5, 8,   |")
-      escreval ("| 13, 21, 34, 55, 89, 144, etc.              |")
-      escreval ("|____________________________________________|")
-      escrevaL (" ____________________________________________ ")
-      escrevaL ("|                                            |")
-      escrevaL ("|  SEQUENCIA DE FIBONACCI, (min 1Â°max 47Â°)   |")
-      escrevaL ("|____________________________________________|")
-      escreval ("")
-      escreval(" ____________________________ ")
-      escreval("|                            |")
-      escreval("|      Menu: FIBONACCI       |")
-      escreval("|____________________________|")
-      escreval("|                            |")
-      escreval("|          OPÃ‡Ã”ES            |")
-      escreval("|                            |")
-      escreval("| 1- SequÃªncia de Fibonacci  |")
-      escreval("| 2- Escolha uma posiÃ§Ã£o     |")
-      escreval("| 3- LIMPAR                  |")
-      escreval("| 4- Sair                    |")
-      escreval("|____________________________|")
-      escreval("")
-      escreva("Escolher, Retorne as OpÃ§Ãµes => ")
-      leia (A1)
-      escreval("")
-      escolha A1
-      caso 1
-         escreva("Digite um numero => ")
-         escreva ("")
-         leia (limite)
-         f1 <--1
-         f2 <-1
-         cont <-0
-         enquanto (cont<limite)faca
-            f3<-f1+f2
-            f1<-f2
-            f2<-f3
-            cont <-cont+1
-            contador <-cont+0
+      //fibonacci
+      repita
+         escreval ("")
+         escreval (" ____________________________________________ ")
+         escreval ("|                                            |")
+         escreval ("| A sequÃªncia de Fibonacci Ã© uma sucessÃ£o    |")
+         escreval ("| infinita de nÃºmeros naturais proposta pelo |")
+         escreval ("| matemÃ¡tico Leonardo Pisa, mais conhecido   |")
+         escreval ("| como Fibonacci. Ela Ã© formada pela soma    |")
+         escreval ("| dos dois nÃºmeros anteriores, comeÃ§ando     |")
+         escreval ("| com 0 e 1, e continua com 1, 2, 3, 5, 8,   |")
+         escreval ("| 13, 21, 34, 55, 89, 144, etc.              |")
+         escreval ("|____________________________________________|")
+         escrevaL (" ____________________________________________ ")
+         escrevaL ("|                                            |")
+         escrevaL ("|  SEQUENCIA DE FIBONACCI, (min 1Â°max 47Â°)   |")
+         escrevaL ("|____________________________________________|")
+         escreval ("")
+         escreval(" ____________________________ ")
+         escreval("|                            |")
+         escreval("|      Menu: FIBONACCI       |")
+         escreval("|____________________________|")
+         escreval("|                            |")
+         escreval("|          OPÃ‡Ã”ES            |")
+         escreval("|                            |")
+         escreval("| 1- SequÃªncia de Fibonacci  |")
+         escreval("| 2- Escolha uma posiÃ§Ã£o     |")
+         escreval("| 3- LIMPAR                  |")
+         escreval("| 4- Sair                    |")
+         escreval("|____________________________|")
+         escreval("")
+         escreva("Escolher, Retorne as OpÃ§Ãµes => ")
+         leia (A1)
+         escreval("")
+         escolha A1
+         caso 1
+            escreva("Digite um numero => ")
+            escreva ("")
+            leia (limite)
+            f1 <--1
+            f2 <-1
+            cont <-0
+            enquanto (cont<limite)faca
+               f3<-f1+f2
+               f1<-f2
+               f2<-f3
+               cont <-cont+1
+               contador <-cont+0
+               escreval ("")
+               escreval (contador,"ÂºPosiÃ§Ã£o = ", f3)
+            fimenquanto
+            escreval ("")
+         caso 2
+            escreval ("")
+            escreva("Digite a posiÃ§Ã£o desejada na sequÃªncia de Fibonacci=> ")
+            escreva ("")
+            leia (limite)
+            escreva ("")
+            f1 <--1
+            f2 <-1
+            cont <-0
+            escreva ("")
+            enquanto (cont<limite)faca
+               f3<-f1+f2
+               f1<-f2
+               f2<-f3
+               cont <-cont+1
+               contador <-cont+0
+
+            fimenquanto
             escreval ("")
             escreval (contador,"ÂºPosiÃ§Ã£o = ", f3)
-         fimenquanto
-         escreval ("")
-      caso 2
-         escreval ("")
-         escreva("Digite a posiÃ§Ã£o desejada na sequÃªncia de Fibonacci=> ")
-         escreva ("")
-         leia (limite)
-         escreva ("")
-         f1 <--1
-         f2 <-1
-         cont <-0
-         escreva ("")
-         enquanto (cont<limite)faca
-            f3<-f1+f2
-            f1<-f2
-            f2<-f3
-            cont <-cont+1
-            contador <-cont+0
+         caso 3
+            limpatela
+         fimescolha
+      ate A1 =4
 
-         fimenquanto
-         escreval ("")
-         escreval (contador,"ÂºPosiÃ§Ã£o = ", f3)
-      caso 3
-         limpatela
-      fimescolha
-   ate A1 =4
-
-
-fimescolha
-   
-   caso 2
-   // n.triangulares
-   
-   caso 3
-   //n. primos
-   
-   caso 4
-   //fatorial
-   
-   caso 5
-   //quadrados perfeitos
-   
-   caso 6
-   repita
-   opcaoEscolhida()
- ate (opcaoMenuCubos = 5)
-   
-   caso 7
-   //sequencia geometrica
-   
-   caso 8
-   //sequencia alternada
-   
-   caso 9
-   //tribonacci
 
    fimescolha
+
+caso 2
+   // n.triangulares
+
+caso 3
+    repita
+      OpcEscolhidaPrimos()
+   ate(OpcMenuPrimos = 5)
+
+caso 4
+   //fatorial
+
+caso 5
+   //quadrados perfeitos
+
+caso 6
+   repita
+      opcaoEscolhida()
+   ate (opcaoMenuCubos = 5)
+
+caso 7
+   //sequencia geometrica
+
+caso 8
+   //sequencia alternada
+
+caso 9
+   //tribonacci
+
+fimescolha
 
 
 
