@@ -4,9 +4,9 @@ Var
 
    opcao, opcaoMenuCubos, numeroCubo, contador, cubo : inteiro
    num, limite, cont: Inteiro
-   A1, A2, A3 :inteiro
+   A1, A2, A3,D,C,N,OpcMenuPrimos :inteiro
    opcaoMenuAlternado: inteiro
-   f1, f2, f3: Inteiro
+   f1, f2, f3,I1,P1,N1,C1: Inteiro
 
 
 
@@ -53,7 +53,94 @@ Inicio
    fimenquanto
 fimprocedimento
 
+procedimento ExibirMenuPrimos()
+inicio
+   escreval(" __________________________")
+   escreval("|                          |")
+   escreval("|   Menu: NUMEROS PRIMOS   |")
+   escreval("|__________________________|")
+   escreval("|         OPÇÕES           |")
+   escreval("|                          |")
+   escreval("| OPÇÃO 1 - Divisores      |")
+   escreval("| OPÇÃO 2 - Sequencia      |")
+   escreval("| OPÇÃO 3 - Limpar tela    |")
+   escreval("| OPÇÃO 4 - Definição      |")
+   escreval("| OPÇÃO 5 - Sair           |")
+   escreval("|__________________________|")
+   escreva(" Digite uma opção => ")
+   leia (OpcMenuPrimos)
+fimprocedimento
 
+procedimento MenuPrimos()
+inicio
+   ExibirMenuPrimos()
+   enquanto (OpcMenuPrimos > 5) ou (OpcMenuPrimos < 1) faca
+      limpatela
+      escreval("Escolha uma opção valida!")
+      ExibirMenuPrimos()
+   fimenquanto
+fimprocedimento
+
+procedimento OpcEscolhidaPrimos()
+inicio
+   MenuPrimos()
+   escolha OpcMenuPrimos
+   caso 1
+      limpatela
+      escreval("")
+      escreval ("Digite um numero inteiro:")
+      leia(N)
+      C <- N
+      D <- 0
+      escreva("Divisores :")
+      repita
+         se (N%C=0)entao
+            escreva(C)
+            D<- D+1
+         fimse
+         C <-C-1
+      ate (C<1)
+      escreval ("")
+      se (D=2) entao
+         escreval(N, " É um numero primo!")
+      senao
+         escreval(N," Não é um numero primo!")
+      fimse
+
+   caso 2
+      limpatela
+      escreval("")
+      escreval(" Digite um numero:")
+      leia (N1)
+      escreval("Sequencia de numeros primos:")
+      para C1 <- 1 ate N1 faca
+         P1 <-0
+         para I1 <- 1 ate C1 faca
+            se (C1%I1=0) entao
+               P1 <- P1+1
+            fimse
+         fimpara
+         se (P1=2) entao
+            escreva(C1)
+         fimse
+      fimpara
+      escreval("")
+
+   caso 3
+      limpatela
+
+   caso 4
+      limpatela
+      escreval(" ______________________________________________")
+      escreval("|                                              |")
+      escreval("|Um número primo é aquele que possue apenas 2  |")
+      escreval("|divisores , o numero 1 e ele mesmo.           |")
+      escreval("|______________________________________________|")
+
+   caso 5
+      escreval("")
+   fimescolha
+fimprocedimento
 
 
 
@@ -401,8 +488,10 @@ Inicio
       // n.triangulares
 
    caso 3
-      //n. primos
-
+      repita
+      OpcEscolhidaPrimos()
+   ate(OpcMenuPrimos = 5)
+   
    caso 4
       //fatorial
 
