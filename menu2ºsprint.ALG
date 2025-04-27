@@ -7,10 +7,10 @@ Var
    A1, A2, A3,D,C,N,OpcMenuPrimos :inteiro
    opcaoMenuAlternado: inteiro
    f1, f2, f3,I1,P1,N1,C1: Inteiro
-     aux,opcao,x:inteiro
+     aux,x:inteiro
    resp: caractere
    VU, VTE:real
-   SM, OP, quantidade, contador, i, opSubmenu:inteiro
+   SM, OP, quantidade,i, opSubmenu:inteiro
    ent :caractere
 
 
@@ -489,8 +489,7 @@ Inicio
          ate (A1 = 4)
 
    caso 2
-      // n.triangulares
-      Inicio
+   limpatela
    OP <- 1
    enquanto OP = 1 faca
       escreval(" ______________________________")
