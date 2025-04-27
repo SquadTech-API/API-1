@@ -9,7 +9,9 @@ Var
    f1, f2, f3,I1,P1,N1,C1: Inteiro
      aux,opcao,x:inteiro
    resp: caractere
-
+   VU, VTE:real
+   SM, OP, quantidade, contador, i, opSubmenu:inteiro
+   ent :caractere
 
 
 procedimento opcoes()
@@ -488,6 +490,90 @@ Inicio
 
    caso 2
       // n.triangulares
+      Inicio
+   OP <- 1
+   enquanto OP = 1 faca
+      escreval(" ______________________________")
+      escreval("|      NÚMEROS TRIANGULARES    |")
+      escreval("|______________________________|")
+      escreval("| Um número triangular é um    |")
+      escreval("| número natural que pode ser  |")
+      escreval("| representado na forma de um  |")
+      escreval("| triângulo equilátero.        |")
+      escreval("|______________________________|")
+      escreval("|           MENU               |")
+      escreval("| 1 - Verificar se é triangular|")
+      escreval("| 2 - Listar triangulares      |")
+      escreval("| 0 - Sair do programa         |")
+      escreval("|______________________________|")
+      escreva("Opção: ")
+      leia(SM)
+
+      escolha SM
+      caso 1
+         Limpatela
+         opSubmenu <- 1
+         enquanto opSubmenu = 1 faca
+            escreval(" ________________________________________")
+            escreval("|              COMO FUNCIONA             |")
+            escreval("| Um número x é triangular se a raiz de  |")
+            escreval("| (8×x + 1) for um número inteiro.       |")
+            escreval("|________________________________________|")
+            escreva("Número a ser verificado: ")
+            leia(VU)
+            VTE <- (VU * 8) + 1
+            VTE <- RaizQ(VTE)
+            se VTE = int(VTE) entao
+               escreval(VU, " é um número triangular.")
+            senao
+               escreval(VU, " não é um número triangular.")
+            fimse
+            escreval("")
+            escreval("1 - Verificar outro número")
+            escreval("2 - Voltar ao menu")
+            escreval("0 - Sair do programa")
+            escreva("Opção: ")
+            leia(opSubmenu)
+            se opSubmenu = 0 entao
+               OP <- 0
+            fimse
+            limpatela
+         fimenquanto
+
+      caso 2
+         limpatela
+         Escreva("Quantos números triangulares deseja listar? ")
+         leia(quantidade)
+
+         escreval("")
+         escreval("Lista de números triangulares:")
+         contador <- 0
+         i <- 1
+         enquanto contador < quantidade faca
+            VU <- (i * (i + 1)) / 2
+            VTE <- (VU * 8) + 1
+            VTE <- RaizQ(VTE)
+            se VTE = int(VTE) entao
+               contador <- contador + 1
+               Escreval(contador, "º:", VU)
+               escreval ("")
+            fimse
+            i <- i + 1
+         fimenquanto
+         escreval("")
+         escreval("Pressione ENTER para continuar...")
+         leia(ent)
+         limpatela
+
+      caso 0
+         OP <- 0
+
+      outrocaso
+         escreval("Opção inválida! Tente novamente.")
+         leia (ent)
+         limpatela
+      fimescolha
+   fimenquanto
 
    caso 3
       repita
