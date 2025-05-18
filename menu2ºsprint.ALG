@@ -286,14 +286,14 @@ Procedimento opcaoCubos()
 
 var
 
-numeroCubo, contador, cubo : Inteiro
+   numeroCubo, contador, cubo : Inteiro
 
 Inicio
 
    Repita
 
       menuCubos()
-      
+
       LimpaTela
 
       Escolha opcaoMenuCubos
@@ -320,10 +320,24 @@ Inicio
          Escreval("_____________________________________")
 
       Caso 2
-         Escreva("Digite um número inteiro: ")
-         Leia(numeroCubo)
 
-         LimpaTela
+         numeroCubo <- 0
+
+         Enquanto (numeroCubo <1) ou (numeroCubo > 1290) faca
+            Escreval(" ________________________________ ")
+            Escreval("|                                |")
+            Escreval("|     VALOR ENTRE 1 E 1290       |")
+            Escreval("|________________________________|")
+            
+            Escreval("") // QUEBRA DE LINHA
+            
+            Escreva(" Digite um número inteiro: ")
+            Leia(numeroCubo)
+
+            LimpaTela
+         FimEnquanto
+
+
 
          contador <- 1
 
