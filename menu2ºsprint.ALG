@@ -4,10 +4,8 @@ Algoritmo "Menufunções"
 
 Var
 
-   opcao, opcaoMenuCubos, contador: inteiro
-   num, limite, cont: Inteiro
+   opcao, opcaoMenuCubos,opcaoMenuAlternado, contador: inteiro
    A1, A2, A3,D,C,N,OpcMenuPrimos :inteiro
-   opcaoMenuAlternado: inteiro
    f1, f2, f3,I1,P1,N1,C1: Inteiro
    aux,x:inteiro
    resp: caractere
@@ -150,7 +148,7 @@ fimprocedimento
 
 
 
-procedimento exibirMenuAlternado()
+procedimento menuAlternado()
 Inicio
 
    escreval("")
@@ -163,9 +161,8 @@ Inicio
    escreval("|                                |")
    escreval("| 1- Sequência Alternada         |")
    escreval("| 2- Escolha uma posição         |")
-   escreval("| 3- LIMPAR                      |")
-   escreval("| 4- Explicação Seq. alternda    |")
-   escreval("| 5- Retornar Menu Princiapal    |")
+   escreval("| 3- Explicação Seq. alternda    |")
+   escreval("| 4- Retornar Menu Principal     |")
    escreval("|________________________________|")
    escreval("")
    Escreva("Selecione uma Opção: ")
@@ -173,90 +170,84 @@ Inicio
 
 fimprocedimento
 
-Procedimento menuAlternado()
-Inicio
-   exibirMenuAlternado()
+Procedimento opcaoAlternado()
 
-   Enquanto (opcaoMenuAlternado < 1) ou (opcaoMenuAlternado > 5) faca
+Var
+
+   cont, limiteAlternado, numAlternado: Inteiro
+
+Inicio
+
+   Repita
+
+      menuAlternado()
+
       LimpaTela
-      Escreval("Opção selecionada inválida. Tente novamente.")
-      exibirMenuAlternado()
-   FimEnquanto
 
-FimProcedimento
+      escolha opcaoMenuAlternado
 
-Procedimento opcaoEscolhidaAlternado()
-Inicio
+      caso 1
 
-   menuAlternado()
+         escreva("Digite um número => ")
+         escreva ("")
+         leia (limiteAlternado)
+         cont <- 1
+         enquanto (cont <= limiteAlternado) faca
+            se (cont % 2 = 0) entao
+               numAlternado <- cont * -1
+            senao
+               numAlternado <- cont
+            fimse
+            escreval ("")
+            escreval (cont,"º Posição = ", numAlternado)
+            cont <- cont + 1
+         fimenquanto
+         escreval ("")
 
-   escolha opcaoMenuAlternado
+      caso 2
 
-   caso 1
-      limpatela
-      escreva("Digite um número => ")
-      escreva ("")
-      leia (limite)
-      cont <- 1
-      enquanto (cont <= limite) faca
-         se (cont % 2 = 0) entao
-            num <- cont * -1
+         escreval ("")
+         escreva("Digite a posição desejada na sequência alternada => ")
+         escreva ("")
+         leia (limiteAlternado)
+         escreva ("")
+         se (limiteAlternado % 2 = 0) entao
+            numAlternado <- limiteAlternado * -1
          senao
-            num <- cont
+            numAlternado <- limiteAlternado
          fimse
          escreval ("")
-         escreval (cont,"º Posição = ", num)
-         cont <- cont + 1
-      fimenquanto
-      escreval ("")
+         escreval (limiteAlternado,"º Posição = ", numAlternado)
 
-   caso 2
-      limpatela
-      escreval ("")
-      escreva("Digite a posição desejada na sequência alternada => ")
-      escreva ("")
-      leia (limite)
-      escreva ("")
-      se (limite % 2 = 0) entao
-         num <- limite * -1
-      senao
-         num <- limite
-      fimse
-      escreval ("")
-      escreval (limite,"º Posição = ", num)
+      caso 3
 
-   caso 3
+         escrevaL (" ____________________________________________ ")
+         escrevaL ("|                                            |")
+         escrevaL ("|            SEQUÊNCIA ALTERNADA             |")
+         escreval (" ____________________________________________ ")
+         escreval ("|                                            |")
+         escreval ("| Uma sequência alternada é composta por     |")
+         escreval ("| números inteiros com sinais alternados.    |")
+         escreval ("| Exemplo: 1, -2, 3, -4, 5, -6, ...          |")
+         escreval ("|____________________________________________|")
 
-      limpatela
+      caso 4
 
-   caso 4
-      limpatela
+      outrocaso
+         escreval(" ________________________________ ")
+         escreval("|                                |")
+         escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|________________________________|")
 
-      escrevaL (" ____________________________________________ ")
-      escrevaL ("|                                            |")
-      escrevaL ("|            SEQUÊNCIA ALTERNADA             |")
-      escreval (" ____________________________________________ ")
-      escreval ("|                                            |")
-      escreval ("| Uma sequência alternada é composta por     |")
-      escreval ("| números inteiros com sinais alternados.    |")
-      escreval ("| Exemplo: 1, -2, 3, -4, 5, -6, ...          |")
-      escreval ("|____________________________________________|")
 
-   caso 5
-      limpatela
+      fimescolha
 
-   fimescolha
+   Ate (opcaoMenuAlternado = 4)
 
 
 fimprocedimento
 
-
-
-
-
-
-
-
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE NUMEROS CUBICOS
 
 Procedimento menuCubos()
 
@@ -328,16 +319,14 @@ Inicio
             Escreval("|                                |")
             Escreval("|     VALOR ENTRE 1 E 1290       |")
             Escreval("|________________________________|")
-            
+
             Escreval("") // QUEBRA DE LINHA
-            
+
             Escreva(" Digite um número inteiro: ")
             Leia(numeroCubo)
 
             LimpaTela
          FimEnquanto
-
-
 
          contador <- 1
 
@@ -389,6 +378,7 @@ Inicio
 
    //aqui chamamos o procedimento pra ir ao menu:
    repita
+   
       menu()
 
       escolha opcao
@@ -667,9 +657,7 @@ Inicio
 
       caso 8
          limpatela
-         repita
-            opcaoEscolhidaAlternado()
-         ate (opcaoMenuAlternado = 5)
+         opcaoAlternado()
 
       caso 9
          //tribonacci
