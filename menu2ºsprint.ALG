@@ -1,13 +1,15 @@
 Algoritmo "Menufunções"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
 
 Var
 
-   opcao, opcaoMenuCubos, numeroCubo, contador, cubo : inteiro
+   opcao, opcaoMenuCubos, contador: inteiro
    num, limite, cont: Inteiro
    A1, A2, A3,D,C,N,OpcMenuPrimos :inteiro
    opcaoMenuAlternado: inteiro
    f1, f2, f3,I1,P1,N1,C1: Inteiro
-     aux,x:inteiro
+   aux,x:inteiro
    resp: caractere
    VU, VTE:real
    SM, OP, quantidade,i, opSubmenu:inteiro
@@ -256,8 +258,10 @@ fimprocedimento
 
 
 
-Procedimento exibirMenuCubos()
+Procedimento menuCubos()
+
 Inicio
+
 
    escreval("")
    escreval(" ________________________________ ")
@@ -267,11 +271,10 @@ Inicio
    escreval("|                                |")
    escreval("|             OPÇÕES             |")
    escreval("|                                |")
-   escreval("| 1- Verficar se cúbico          |")
-   escreval("| 2- Mostrar números cúbicos     |")
-   escreval("| 3- Listar números cúbicos      |")
-   escreval("| 4- Explicação Números cúbicos  |")
-   escreval("| 5- Retornar Menu Princiapal    |")
+   escreval("| 1- Mostrar números cúbicos     |")
+   escreval("| 2- Listar números cúbicos      |")
+   escreval("| 3- Explicação Números cúbicos  |")
+   escreval("| 4- Retornar Menu Principal     |")
    escreval("|________________________________|")
    escreval("")
    Escreva("Selecione uma Opção: ")
@@ -279,124 +282,91 @@ Inicio
 
 FimProcedimento
 
-Procedimento menuCubos()
-Inicio
-   exibirMenuCubos()
+Procedimento opcaoCubos()
 
-   Enquanto (opcaoMenuCubos < 1) ou (opcaoMenuCubos > 5) faca
-      LimpaTela
-      Escreval("Opção selecionada inválida. Tente novamente.")
-      exibirMenuCubos()
-   FimEnquanto
+var
 
-FimProcedimento
+numeroCubo, contador, cubo : Inteiro
 
-Procedimento opcaoEscolhidaCubos()
 Inicio
 
+   Repita
 
-   menuCubos()
-
-   Escolha opcaoMenuCubos
-
-   caso 1
+      menuCubos()
+      
       LimpaTela
-      Escreva("Digite um número inteiro: ")
-      Leia(numeroCubo)
 
-      contador <- 1
+      Escolha opcaoMenuCubos
 
-      Enquanto ((contador * contador * contador) < numeroCubo) faca
-         contador  <- contador + 1
-      FimEnquanto
+      Caso 1
+         Escreva("Digite um número inteiro: ")
+         Leia(numeroCubo)
 
-      // Verifica se é exatamente igual
-      Se (contador * contador * contador = numeroCubo) entao
+         contador <- 1
+         cubo <- contador * contador * contador
+
          LimpaTela
+
+         Escreval("Cubos perfeitos até ", numeroCubo, ":")
+
          Escreval(" ____________________________________")
-         Escreval("",numeroCubo, " é um cubo perfeito!              ")
-         Escreval(" Pois ,", contador, " X", contador, " X", contador, " =",contador, "^3 =", numeroCubo)
+         Escreval("")
+         Enquanto (cubo <= numeroCubo) faca
+            escreval(" ", contador, "^3 = ", cubo)
+            contador <- contador + 1
+            cubo <- contador * contador * contador
+         FimEnquanto
+
+         Escreval("_____________________________________")
+
+      Caso 2
+         Escreva("Digite um número inteiro: ")
+         Leia(numeroCubo)
+
+         LimpaTela
+
+         contador <- 1
+
+         Escreval("Números de 1 até ", numeroCubo, " elevados ao cubo:")
+
          Escreval(" ____________________________________")
-      Senao
-         Limpatela
-         Escreval(" ___________________________________")
-         Escreval("                                    ")
-         Escreval(" ", numeroCubo, " não é um cubo perfeito.")
-         Escreval(" ___________________________________")
-      Fimse
+         Escreval("")
 
-   caso 2
-      LimpaTela
-      Escreva("Digite um número inteiro: ")
-      Leia(numeroCubo)
+         Enquanto (contador <= numeroCubo) faca
+            cubo <- contador * contador * contador
+            Escreval(contador, "^3 = ", cubo)
+            contador <- contador + 1
+         FimEnquanto
 
-      contador <- 1
-      cubo <- contador * contador * contador
+         Escreval("____________________________________")
 
-      LimpaTela
+      Caso 3
+         Escreval(" _______________________________")
+         Escreval("|                               |")
+         Escreval("|         CUBOS PERFEITOS       |")
+         Escreval("|_______________________________|")
+         Escreval("| Um cubo perfeito é um número  |")
+         Escreval("| inteiro que resulta da        |")
+         Escreval("| multiplicação de um número    |")
+         Escreval("| por ele mesmo três vezes, ou  |")
+         Escreval("| seja: n × n × n = n³.         |")
+         Escreval("| Exemplos: 1, 8, 27, 64, 125...|")
+         Escreval("|_______________________________|")
 
-      Escreval("Cubos perfeitos até ", numeroCubo, ":")
+      Caso 4
 
-      Escreval(" ____________________________________")
-      Escreval("")
-      Enquanto (cubo <= numeroCubo) faca
-         escreval(" ", contador, "^3 = ", cubo)
-         contador <- contador + 1
-         cubo <- contador * contador * contador
-      FimEnquanto
+      OutroCaso
+         escreval(" ________________________________ ")
+         escreval("|                                |")
+         escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|________________________________|")
 
-      Escreval("_____________________________________")
+      FimEscolha
 
-   caso 3
-      LimpaTela
-      Escreva("Digite um número inteiro: ")
-      Leia(numeroCubo)
+   Ate (opcaoMenuCubos = 4)
 
-      Limpatela
-
-      contador <- 1
-
-      Escreval("Números de 1 até ", numeroCubo, " elevados ao cubo:")
-
-      Escreval(" ____________________________________")
-      Escreval("")
-
-      Enquanto (contador <= numeroCubo) faca
-         cubo <- contador * contador * contador
-         Escreval(contador, "^3 = ", cubo)
-         contador <- contador + 1
-      Fimenquanto
-
-      Escreval("____________________________________")
-
-   caso 4
-      limpatela
-      Escreval(" _______________________________")
-      Escreval("|                               |")
-      Escreval("|         CUBOS PERFEITOS       |")
-      Escreval("|_______________________________|")
-      Escreval("| Um cubo perfeito é um número  |")
-      Escreval("| inteiro que resulta da        |")
-      Escreval("| multiplicação de um número    |")
-      Escreval("| por ele mesmo três vezes, ou  |")
-      Escreval("| seja: n × n × n = n³.         |")
-      Escreval("| Exemplos: 1, 8, 27, 64, 125...|")
-      Escreval("|_______________________________|")
-
-   caso 5
-      limpatela
-
-   FimEscolha
 
 FimProcedimento
-
-
-
-
-
-
-
-
 
 
 Inicio
@@ -488,212 +458,210 @@ Inicio
             fimescolha
          ate (A1 = 4)
 
-   caso 2
-   limpatela
-   OP <- 1
-   enquanto OP = 1 faca
-      escreval(" ______________________________")
-      escreval("|      NÚMEROS TRIANGULARES    |")
-      escreval("|______________________________|")
-      escreval("| Um número triangular é um    |")
-      escreval("| número natural que pode ser  |")
-      escreval("| representado na forma de um  |")
-      escreval("| triângulo equilátero.        |")
-      escreval("|______________________________|")
-      escreval("|           MENU               |")
-      escreval("| 1 - Verificar se é triangular|")
-      escreval("| 2 - Listar triangulares      |")
-      escreval("| 0 - Sair do programa         |")
-      escreval("|______________________________|")
-      escreva("Opção: ")
-      leia(SM)
-
-      escolha SM
-      caso 1
-         Limpatela
-         opSubmenu <- 1
-         enquanto opSubmenu = 1 faca
-            escreval(" ________________________________________")
-            escreval("|              COMO FUNCIONA             |")
-            escreval("| Um número x é triangular se a raiz de  |")
-            escreval("| (8×x + 1) for um número inteiro.       |")
-            escreval("|________________________________________|")
-            escreva("Número a ser verificado: ")
-            leia(VU)
-            VTE <- (VU * 8) + 1
-            VTE <- RaizQ(VTE)
-            se VTE = int(VTE) entao
-               escreval(VU, " é um número triangular.")
-            senao
-               escreval(VU, " não é um número triangular.")
-            fimse
-            escreval("")
-            escreval("1 - Verificar outro número")
-            escreval("2 - Voltar ao menu")
-            escreval("0 - Sair do programa")
+      caso 2
+         limpatela
+         OP <- 1
+         enquanto OP = 1 faca
+            escreval(" ______________________________")
+            escreval("|      NÚMEROS TRIANGULARES    |")
+            escreval("|______________________________|")
+            escreval("| Um número triangular é um    |")
+            escreval("| número natural que pode ser  |")
+            escreval("| representado na forma de um  |")
+            escreval("| triângulo equilátero.        |")
+            escreval("|______________________________|")
+            escreval("|           MENU               |")
+            escreval("| 1 - Verificar se é triangular|")
+            escreval("| 2 - Listar triangulares      |")
+            escreval("| 0 - Sair do programa         |")
+            escreval("|______________________________|")
             escreva("Opção: ")
-            leia(opSubmenu)
-            se opSubmenu = 0 entao
+            leia(SM)
+
+            escolha SM
+            caso 1
+               Limpatela
+               opSubmenu <- 1
+               enquanto opSubmenu = 1 faca
+                  escreval(" ________________________________________")
+                  escreval("|              COMO FUNCIONA             |")
+                  escreval("| Um número x é triangular se a raiz de  |")
+                  escreval("| (8×x + 1) for um número inteiro.       |")
+                  escreval("|________________________________________|")
+                  escreva("Número a ser verificado: ")
+                  leia(VU)
+                  VTE <- (VU * 8) + 1
+                  VTE <- RaizQ(VTE)
+                  se VTE = int(VTE) entao
+                     escreval(VU, " é um número triangular.")
+                  senao
+                     escreval(VU, " não é um número triangular.")
+                  fimse
+                  escreval("")
+                  escreval("1 - Verificar outro número")
+                  escreval("2 - Voltar ao menu")
+                  escreval("0 - Sair do programa")
+                  escreva("Opção: ")
+                  leia(opSubmenu)
+                  se opSubmenu = 0 entao
+                     OP <- 0
+                  fimse
+                  limpatela
+               fimenquanto
+
+            caso 2
+               limpatela
+               Escreva("Quantos números triangulares deseja listar? ")
+               leia(quantidade)
+
+               escreval("")
+               escreval("Lista de números triangulares:")
+               contador <- 0
+               i <- 1
+               enquanto contador < quantidade faca
+                  VU <- (i * (i + 1)) / 2
+                  VTE <- (VU * 8) + 1
+                  VTE <- RaizQ(VTE)
+                  se VTE = int(VTE) entao
+                     contador <- contador + 1
+                     Escreval(contador, "º:", VU)
+                     escreval ("")
+                  fimse
+                  i <- i + 1
+               fimenquanto
+               escreval("")
+               escreval("Pressione ENTER para continuar...")
+               leia(ent)
+               limpatela
+
+            caso 0
                OP <- 0
-            fimse
-            limpatela
+
+            outrocaso
+               escreval("Opção inválida! Tente novamente.")
+               leia (ent)
+               limpatela
+            fimescolha
          fimenquanto
-
-      caso 2
-         limpatela
-         Escreva("Quantos números triangulares deseja listar? ")
-         leia(quantidade)
-
-         escreval("")
-         escreval("Lista de números triangulares:")
-         contador <- 0
-         i <- 1
-         enquanto contador < quantidade faca
-            VU <- (i * (i + 1)) / 2
-            VTE <- (VU * 8) + 1
-            VTE <- RaizQ(VTE)
-            se VTE = int(VTE) entao
-               contador <- contador + 1
-               Escreval(contador, "º:", VU)
-               escreval ("")
-            fimse
-            i <- i + 1
-         fimenquanto
-         escreval("")
-         escreval("Pressione ENTER para continuar...")
-         leia(ent)
-         limpatela
-
-      caso 0
-         OP <- 0
-
-      outrocaso
-         escreval("Opção inválida! Tente novamente.")
-         leia (ent)
-         limpatela
-      fimescolha
-   fimenquanto
-
-   caso 3
-      repita
-      OpcEscolhidaPrimos()
-   ate(OpcMenuPrimos = 5)
-   
-   caso 4
-      //fatorial
-
-   caso 5
-   repita
-      escreval (" _______________________________________")
-      escreval ("|                                       |")
-      escreval ("|          QUADRADOS PERFEITOS          |")
-      escreval ("|_______________________________________|")
-      escreval ("|                                       |")
-      escreval ("|               SUBMENU                 |")
-      escreval ("|_______________________________________|")
-      escreval ("|                                       |")
-      escreval ("|   1- O que são Quadrados Perfeitos?   |")
-      escreval ("|  2- Sequência de Quadrados Perfeitos  |")
-      escreval ("| 3- Verificação de Quadrados Perfeitos |")
-      escreval ("|              0- Sair                  |")
-      escreval ("|_______________________________________|")
-      escreval ()
-      escreva ("Digite a opção: ")
-      leia (opcao)
-
-
-      escolha opcao
-
-      caso 1
-         repita
-            escreval (" __________________________________")
-            escreval ("|                                  |")
-            escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
-            escreval ("|__________________________________|")
-            escreval ()
-            escreval ("Um quadrado perfeito, ou número quadrado, é um número natural")
-            escreval ("que resulta da multiplicação de um número natural por ele mesmo.")
-            escreval ("Em outras palavras, é um número que, ao extrair sua raiz quadrada,")
-            escreval ("tem como resultado outro número natural.")
-            escreval ()
-            escreval ("Deseja continuar? [S/N]")
-            leia (resp)
-         ate (resp = "N") ou (resp = "n")
-
-      caso 2
-         repita
-            escreval (" __________________________________")
-            escreval ("|                                  |")
-            escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
-            escreval ("|__________________________________|")
-            escreval ()
-            escreva("Digite o limite desejado: ")
-            leia(limite)
-
-            para n := 1 até limite faça
-               escreval("O quadrado de ", N, " é: ", N * N)
-            fimpara
-            escreval("")
-            escreval ("Deseja continuar? [S/N]")
-            leia (resp)
-         ate (resp = "N") ou (resp = "n")
 
       caso 3
          repita
-            escreval (" ____________________________________")
-            escreval ("|                                    |")
-            escreval ("| VERIFICAÇÃO DE QUADRADOS PERFEITOS |")
-            escreval ("|____________________________________|")
+            OpcEscolhidaPrimos()
+         ate(OpcMenuPrimos = 5)
+
+      caso 4
+         //fatorial
+
+      caso 5
+         repita
+            escreval (" _______________________________________")
+            escreval ("|                                       |")
+            escreval ("|          QUADRADOS PERFEITOS          |")
+            escreval ("|_______________________________________|")
+            escreval ("|                                       |")
+            escreval ("|               SUBMENU                 |")
+            escreval ("|_______________________________________|")
+            escreval ("|                                       |")
+            escreval ("|   1- O que são Quadrados Perfeitos?   |")
+            escreval ("|  2- Sequência de Quadrados Perfeitos  |")
+            escreval ("| 3- Verificação de Quadrados Perfeitos |")
+            escreval ("|              0- Sair                  |")
+            escreval ("|_______________________________________|")
             escreval ()
-            escreval ("insira o número desejado:")
-            leia (x)
-            aux<- 0
-            para n de 1 ate x faca
-               se n*n = x entao
-                  escreval ("O número escolhido é um quadrado perfeito!")
-                  escreval ("-Número escolhido:",x)
-                  escreval ("-Número base do quadrado perfeito:",N)
-                  aux<-1
-                  interrompa
-               fimse
-            fimpara
+            escreva ("Digite a opção: ")
+            leia (opcao)
 
-            se aux = 0 entao
-               escreval ("O número escolhido NÃO é um quadrado perfeito")
-               escreval ("-Número escolhido:",x)
-            fimse
-            escreval()
-            escreval ("Deseja continuar? [S/N]")
-            leia (resp)
-         ate (resp = "N") ou (resp = "n")
 
-      caso 0
-         escreval ("Saindo do programa...")
+            escolha opcao
+
+            caso 1
+               repita
+                  escreval (" __________________________________")
+                  escreval ("|                                  |")
+                  escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
+                  escreval ("|__________________________________|")
+                  escreval ()
+                  escreval ("Um quadrado perfeito, ou número quadrado, é um número natural")
+                  escreval ("que resulta da multiplicação de um número natural por ele mesmo.")
+                  escreval ("Em outras palavras, é um número que, ao extrair sua raiz quadrada,")
+                  escreval ("tem como resultado outro número natural.")
+                  escreval ()
+                  escreval ("Deseja continuar? [S/N]")
+                  leia (resp)
+               ate (resp = "N") ou (resp = "n")
+
+            caso 2
+               repita
+                  escreval (" __________________________________")
+                  escreval ("|                                  |")
+                  escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
+                  escreval ("|__________________________________|")
+                  escreval ()
+                  escreva("Digite o limite desejado: ")
+                  leia(limite)
+
+                  para n := 1 até limite faça
+                     escreval("O quadrado de ", N, " é: ", N * N)
+                  fimpara
+                  escreval("")
+                  escreval ("Deseja continuar? [S/N]")
+                  leia (resp)
+               ate (resp = "N") ou (resp = "n")
+
+            caso 3
+               repita
+                  escreval (" ____________________________________")
+                  escreval ("|                                    |")
+                  escreval ("| VERIFICAÇÃO DE QUADRADOS PERFEITOS |")
+                  escreval ("|____________________________________|")
+                  escreval ()
+                  escreval ("insira o número desejado:")
+                  leia (x)
+                  aux<- 0
+                  para n de 1 ate x faca
+                     se n*n = x entao
+                        escreval ("O número escolhido é um quadrado perfeito!")
+                        escreval ("-Número escolhido:",x)
+                        escreval ("-Número base do quadrado perfeito:",N)
+                        aux<-1
+                        interrompa
+                     fimse
+                  fimpara
+
+                  se aux = 0 entao
+                     escreval ("O número escolhido NÃO é um quadrado perfeito")
+                     escreval ("-Número escolhido:",x)
+                  fimse
+                  escreval()
+                  escreval ("Deseja continuar? [S/N]")
+                  leia (resp)
+               ate (resp = "N") ou (resp = "n")
+
+            caso 0
+               escreval ("Saindo do programa...")
+            fimescolha
+            limpatela
+         ate opcao = 0
+
+
+      caso 6
+         LimpaTela
+         opcaoCubos()
+
+      caso 7
+         //sequencia geometrica
+
+      caso 8
+         limpatela
+         repita
+            opcaoEscolhidaAlternado()
+         ate (opcaoMenuAlternado = 5)
+
+      caso 9
+         //tribonacci
+
       fimescolha
-      limpatela
-   ate opcao = 0
-
-
-   caso 6
-      limpatela
-      repita
-         opcaoEscolhidaCubos()
-      ate (opcaoMenuCubos = 5)
-
-   caso 7
-      //sequencia geometrica
-
-   caso 8
-      limpatela
-      repita
-         opcaoEscolhidaAlternado()
-      ate (opcaoMenuAlternado = 5)
-
-   caso 9
-      //tribonacci
-
-   fimescolha
-ate (opcao=10)
+   ate (opcao=10)
 
 
 
