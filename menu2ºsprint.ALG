@@ -1,6 +1,4 @@
 Algoritmo "Menufunções"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
 
 Var
 
@@ -44,18 +42,6 @@ inicio
 fimprocedimento
 
 
-procedimento menu()
-Inicio
-   opcoes()
-   enquanto (opcao <1) ou (opcao >10) faca
-
-      limpatela
-
-      escrevaL("Não temos essa opção no menu.")
-      escrevaL("")//quebradelinha
-      opcoes()
-   fimenquanto
-fimprocedimento
 
 procedimento ExibirMenuPrimos()
 inicio
@@ -378,8 +364,9 @@ Inicio
 
    //aqui chamamos o procedimento pra ir ao menu:
    repita
-   
-      menu()
+
+
+      opcoes()
 
       escolha opcao
 
@@ -661,8 +648,20 @@ Inicio
 
       caso 9
          //tribonacci
+      caso 10
+         limpatela
+         escrevaL("FIM DO PROGRAMA.")
+
+      outrocaso
+         limpatela
+         escreval(" ________________________________ ")
+         escreval("|                                |")
+         escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|________________________________|")
+
 
       fimescolha
+
    ate (opcao=10)
 
 
