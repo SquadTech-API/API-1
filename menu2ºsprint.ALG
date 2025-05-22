@@ -2,12 +2,12 @@ Algoritmo "Menufunções"
 
 Var
 
-   opcao, opcaoMenuCubos,opcaoMenuAlternado, contador: inteiro
+   opcao, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci, contador: inteiro
    A1, A2, A3,D,C,N,OpcMenuPrimos :inteiro
    f1, f2, f3,I1,P1,N1,C1: Inteiro
    aux,x:inteiro
    resp: caractere
-   
+
 
 
 procedimento opcoes()
@@ -101,12 +101,12 @@ Inicio
          leia (Menu)
          limpatela
       caso 3
-      limpatela
+         limpatela
       fimescolha
    fimenquanto
 fimprocedimento
 // NUMEROS TRIANGULARES
-   Procedimento NumerosTriangulares()
+Procedimento NumerosTriangulares()
 Var
    ValorTriangular: real
    MenuTriang, opSubmenu1, quantidadeTriang, contadorTriang, opSubmenu2: inteiro
@@ -127,48 +127,48 @@ Inicio
       leia(MenuTriang)
 
       escolha MenuTriang
-         caso 1
-            limpatela
-            Escreva("Quantos números triangulares deseja listar? ")
-            leia(quantidadeTriang)
-
-            escreval("")
-            escreval("Lista de números triangulares:")
-            Para contadorTriang de 1 até quantidadeTriang passo 1 faca
-               ValorTriangular <- contadorTriang * (contadorTriang + 1) / 2
-               escreval(contadorTriang, "º:  ", ValorTriangular)
-            Fimpara
-
-            escreval("")
-            escreval("Pressione ENTER para continuar...")
-            leia(enter)
-            limpatela
-
-         caso 2
-            limpatela
-            escreval(" ______________________________")
-            escreval("| Um número triangular é um    |")
-            escreval("| número natural que pode ser  |")
-            escreval("| representado na forma de um  |")
-            escreval("| triângulo equilátero.        |")
-            escreval("| Um número x é triangular se  |")
-            escreval("| a raiz de (8×x+1) for um nú- |")
-            escreval("| mero inteiro.                |")
-            escreval("|______________________________|")
-            escreval("")
-            escreval("Pressione ENTER para continuar...")
-            leia(enter)
-            limpatela
-
-         caso 3
+      caso 1
          limpatela
-            opSubmenu1 <- 0
+         Escreva("Quantos números triangulares deseja listar? ")
+         leia(quantidadeTriang)
 
-         outrocaso
-            escreval("Opção inválida! Tente novamente.")
-            escreval("Pressione ENTER para continuar...")
-            leia (enter)
-            limpatela
+         escreval("")
+         escreval("Lista de números triangulares:")
+         Para contadorTriang de 1 até quantidadeTriang passo 1 faca
+            ValorTriangular <- contadorTriang * (contadorTriang + 1) / 2
+            escreval(contadorTriang, "º:  ", ValorTriangular)
+         Fimpara
+
+         escreval("")
+         escreval("Pressione ENTER para continuar...")
+         leia(enter)
+         limpatela
+
+      caso 2
+         limpatela
+         escreval(" ______________________________")
+         escreval("| Um número triangular é um    |")
+         escreval("| número natural que pode ser  |")
+         escreval("| representado na forma de um  |")
+         escreval("| triângulo equilátero.        |")
+         escreval("| Um número x é triangular se  |")
+         escreval("| a raiz de (8×x+1) for um nú- |")
+         escreval("| mero inteiro.                |")
+         escreval("|______________________________|")
+         escreval("")
+         escreval("Pressione ENTER para continuar...")
+         leia(enter)
+         limpatela
+
+      caso 3
+         limpatela
+         opSubmenu1 <- 0
+
+      outrocaso
+         escreval("Opção inválida! Tente novamente.")
+         escreval("Pressione ENTER para continuar...")
+         leia (enter)
+         limpatela
       fimescolha
    fimenquanto
 FimProcedimento
@@ -491,11 +491,6 @@ FimProcedimento
 
 //SEQUÊNCIA DE TRIBONACCI
 
-procedimento tribonacci ()
-
-var
-   opcaoTribonacci: inteiro
-   //procedimento submenu
 procedimento submenu()
 
 inicio
@@ -561,15 +556,15 @@ Inicio
             Tribonacci3<-Tribonacci4
             contadorTribonacci1 <- contadorTribonacci1 + 1
             escreval ("")
-            fimenquanto
-            escreval (contadorTribonacci1,"º posição = ", Tribonacci4)
+         fimenquanto
+         escreval (contadorTribonacci1,"º posição = ", Tribonacci4)
 
 
          escreval ("")
       caso 2
-            escreval("Digite um número maior que zero e menor que trinta e seis para a sequência: ")
-            Leia (limiteTribonacci)
-            escreva ("")
+         escreval("Digite um número maior que zero e menor que trinta e seis para a sequência: ")
+         Leia (limiteTribonacci)
+         escreva ("")
 
          enquanto (limiteTribonacci>36) ou (limiteTribonacci<= 0) faca
 
@@ -620,7 +615,6 @@ Inicio
          Escreval ("|_________________________________|")
       fimescolha
    ate opcaoTribonacci = 4
-
 fimprocedimento
 
 
@@ -717,8 +711,8 @@ Inicio
          ate (A1 = 4)
 
       caso 2
-      limpatela
-             NumerosTriangulares()
+         limpatela
+         NumerosTriangulares()
 
 
 
@@ -837,6 +831,7 @@ Inicio
          opcaoAlternado()
 
       caso 9
+         limpatela
          tribonacci()
       caso 10
          limpatela
