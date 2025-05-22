@@ -7,9 +7,7 @@ Var
    f1, f2, f3,I1,P1,N1,C1: Inteiro
    aux,x:inteiro
    resp: caractere
-   VU, VTE:real
-   SM, OP, quantidade,i, opSubmenu:inteiro
-   ent :caractere
+   
 
 
 procedimento opcoes()
@@ -40,6 +38,140 @@ inicio
    leia(opcao)
 
 fimprocedimento
+
+// PROGRESSÃO GEOMÉTRICA
+
+Procedimento ProgressaoGeometrica()
+Var
+   razao, termo, ProgGeometrica, contador, contador2 :real
+   Menu :inteiro
+Inicio
+   enquanto Menu <> 3 faca
+      contador2 <-0
+      escreval(" ______________________________")
+      escreval("|    Progressão Geométrica     |")
+      escreval("|______________________________|")
+      escreval("|             MENU             |")
+      escreval("| 1 - Iniciar Progressão       |")
+      escreval("| 2 - Como funciona?           |")
+      escreval("| 3 - Retornar ao Menu         |")
+      escreval("|______________________________|")
+      escreva("Opção: ")
+      leia(Menu)
+      escolha Menu
+      caso 1
+         limpatela
+         escreva ("DEFINA O TERMO DA PROGRESSÃO : ")
+         leia (termo)
+         escreva ("DEFINA A RAZÃO DA PROGRESSÃO : ")
+         leia (razao)
+         escreva ("DEFINA O NÚMERO DE REPETIÇÕES : ")
+         leia (contador)
+         limpatela
+         escreval ("======= PROGRESSÃO GEOMÉTRICA DE ",termo," POR ",razao," =======")
+         escreval ()
+         enquanto contador > 0 faca
+            ProgGeometrica <- (termo * razao)
+            contador2 <- contador2+1
+            escreval(contador2,"º:",termo)
+            termo <- ProgGeometrica
+            contador <- (contador - 1)
+            se termo > 999999999999999  entao //impede o programa de encontrar o erro "floating point".
+               limpatela
+               escreval ("ERRO : VALOR INCALCULÁVEL")
+               contador <- 0
+            fimse
+            se contador = 0 entao
+               Escreval("Aperte ENTER para retornar ao submenu.")
+               leia(Menu)
+               limpatela
+            fimse
+         fimenquanto
+      caso 2
+         limpatela
+         escreval(" _____________________________________________________")
+         escreval("|                    COMO FUNCIONA?                   |")
+         escreval("|_____________________________________________________|")
+         escreval("| Progressão Geométrica (PG) é uma sequência numérica |")
+         escreval("| onde cada termo, a partir do segundo, é obtido      |")
+         escreval("| multiplicando o anterior por uma constante chamada  |")
+         escreval("| razão (q). Exemplo: (2, 4, 8, 16, 32...)            |")
+         escreval("|_____________________________________________________|")
+         escreval ("Aperte enter para continuar")
+         leia (Menu)
+         limpatela
+      caso 3
+      limpatela
+      fimescolha
+   fimenquanto
+fimprocedimento
+// NUMEROS TRIANGULARES
+   Procedimento NumerosTriangulares()
+Var
+   ValorTriangular: real
+   MenuTriang, opSubmenu1, quantidadeTriang, contadorTriang, opSubmenu2: inteiro
+   enter : caractere
+
+Inicio
+   opSubmenu1 <- 1
+   enquanto opSubmenu1 = 1 faca
+      escreval(" ______________________________")
+      escreval("|      NÚMEROS TRIANGULARES    |")
+      escreval("|______________________________|")
+      escreval("|             MENU             |")
+      escreval("| 1 - Listar triangulares      |")
+      escreval("| 2 - Como funciona?           |")
+      escreval("| 3 - Retornar ao Menu         |")
+      escreval("|______________________________|")
+      escreva("Opção: ")
+      leia(MenuTriang)
+
+      escolha MenuTriang
+         caso 1
+            limpatela
+            Escreva("Quantos números triangulares deseja listar? ")
+            leia(quantidadeTriang)
+
+            escreval("")
+            escreval("Lista de números triangulares:")
+            Para contadorTriang de 1 até quantidadeTriang passo 1 faca
+               ValorTriangular <- contadorTriang * (contadorTriang + 1) / 2
+               escreval(contadorTriang, "º:  ", ValorTriangular)
+            Fimpara
+
+            escreval("")
+            escreval("Pressione ENTER para continuar...")
+            leia(enter)
+            limpatela
+
+         caso 2
+            limpatela
+            escreval(" ______________________________")
+            escreval("| Um número triangular é um    |")
+            escreval("| número natural que pode ser  |")
+            escreval("| representado na forma de um  |")
+            escreval("| triângulo equilátero.        |")
+            escreval("| Um número x é triangular se  |")
+            escreval("| a raiz de (8×x+1) for um nú- |")
+            escreval("| mero inteiro.                |")
+            escreval("|______________________________|")
+            escreval("")
+            escreval("Pressione ENTER para continuar...")
+            leia(enter)
+            limpatela
+
+         caso 3
+         limpatela
+            opSubmenu1 <- 0
+
+         outrocaso
+            escreval("Opção inválida! Tente novamente.")
+            escreval("Pressione ENTER para continuar...")
+            leia (enter)
+            limpatela
+      fimescolha
+   fimenquanto
+FimProcedimento
 
 
 
@@ -450,90 +582,11 @@ Inicio
          ate (A1 = 4)
 
       caso 2
-         limpatela
-         OP <- 1
-         enquanto OP = 1 faca
-            escreval(" ______________________________")
-            escreval("|      NÚMEROS TRIANGULARES    |")
-            escreval("|______________________________|")
-            escreval("| Um número triangular é um    |")
-            escreval("| número natural que pode ser  |")
-            escreval("| representado na forma de um  |")
-            escreval("| triângulo equilátero.        |")
-            escreval("|______________________________|")
-            escreval("|           MENU               |")
-            escreval("| 1 - Verificar se é triangular|")
-            escreval("| 2 - Listar triangulares      |")
-            escreval("| 0 - Sair do programa         |")
-            escreval("|______________________________|")
-            escreva("Opção: ")
-            leia(SM)
+      limpatela
+             NumerosTriangulares()
 
-            escolha SM
-            caso 1
-               Limpatela
-               opSubmenu <- 1
-               enquanto opSubmenu = 1 faca
-                  escreval(" ________________________________________")
-                  escreval("|              COMO FUNCIONA             |")
-                  escreval("| Um número x é triangular se a raiz de  |")
-                  escreval("| (8×x + 1) for um número inteiro.       |")
-                  escreval("|________________________________________|")
-                  escreva("Número a ser verificado: ")
-                  leia(VU)
-                  VTE <- (VU * 8) + 1
-                  VTE <- RaizQ(VTE)
-                  se VTE = int(VTE) entao
-                     escreval(VU, " é um número triangular.")
-                  senao
-                     escreval(VU, " não é um número triangular.")
-                  fimse
-                  escreval("")
-                  escreval("1 - Verificar outro número")
-                  escreval("2 - Voltar ao menu")
-                  escreval("0 - Sair do programa")
-                  escreva("Opção: ")
-                  leia(opSubmenu)
-                  se opSubmenu = 0 entao
-                     OP <- 0
-                  fimse
-                  limpatela
-               fimenquanto
 
-            caso 2
-               limpatela
-               Escreva("Quantos números triangulares deseja listar? ")
-               leia(quantidade)
 
-               escreval("")
-               escreval("Lista de números triangulares:")
-               contador <- 0
-               i <- 1
-               enquanto contador < quantidade faca
-                  VU <- (i * (i + 1)) / 2
-                  VTE <- (VU * 8) + 1
-                  VTE <- RaizQ(VTE)
-                  se VTE = int(VTE) entao
-                     contador <- contador + 1
-                     Escreval(contador, "º:", VU)
-                     escreval ("")
-                  fimse
-                  i <- i + 1
-               fimenquanto
-               escreval("")
-               escreval("Pressione ENTER para continuar...")
-               leia(ent)
-               limpatela
-
-            caso 0
-               OP <- 0
-
-            outrocaso
-               escreval("Opção inválida! Tente novamente.")
-               leia (ent)
-               limpatela
-            fimescolha
-         fimenquanto
 
       caso 3
          repita
@@ -641,6 +694,8 @@ Inicio
 
       caso 7
          //sequencia geometrica
+         limpatela
+         ProgressaoGeometrica()
 
       caso 8
          limpatela
