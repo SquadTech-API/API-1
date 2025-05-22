@@ -489,6 +489,141 @@ Inicio
 
 FimProcedimento
 
+//SEQUÊNCIA DE TRIBONACCI
+
+procedimento tribonacci ()
+
+var
+   opcaoTribonacci: inteiro
+   //procedimento submenu
+procedimento submenu()
+
+inicio
+   escreval("")
+   escreval(" ________________________________ ")
+   escreval("|                                |")
+   escreval("|  MENU SEQUÊNCIA DE TRIBONACCI  |")
+   escreval("|________________________________|")
+   escreval("|                                |")
+   escreval("|             OPÇÕES             |")
+   escreval("|                                |")
+   escreval("| 1- Escolha uma posição         |")
+   escreval("| 2- Sequência Tribonacci        |")
+   escreval("| 3- O que é seq. de tribonacci? |")
+   escreval("| 4- Retornar ao menu principal  |")
+   escreval("|________________________________|")
+   escreval("")
+   escreva("Escolha uma opção para efetuar a escolha:")
+   leia (opcaoTribonacci)
+   limpatela
+   escreval("")
+fimprocedimento
+
+//procedimento tribonacci
+procedimento tribonacci()
+
+Var
+   numeroTribonacci,contadorTribonacci1,limiteTribonacci, contadorTribonacci2: inteiro
+   Tribonacci1,Tribonacci2,Tribonacci3,Tribonacci4: inteiro
+
+Inicio
+   Repita
+      escreval("")
+      submenu()
+      escreval("")
+      escolha (opcaoTribonacci)
+      caso 1
+         escreva("Digite um número maior que zero e menor que trinta e seis: ")
+         leia (numeroTribonacci)
+         escreva ("")
+
+         enquanto (numeroTribonacci>36) ou (numeroTribonacci<= 0) faca
+
+            Escreval (" _________________________________ ")
+            Escreval ("|                                 |")
+            Escreval ("|         OPÇÃO INVÁLIDA!         |")
+            Escreval ("|_________________________________|")
+            Escreval ("")
+            escreva("Digite um número maior que zero e menor que trinta e seis: ")
+            leia (numeroTribonacci)
+            escreval ("")
+            limpatela
+         fimenquanto
+
+         Tribonacci1<-0
+         Tribonacci2<-0
+         Tribonacci3<-1
+         contadorTribonacci1<-0
+         Enquanto (contadorTribonacci1 < numeroTribonacci) faca
+            Tribonacci4<- Tribonacci1+Tribonacci2+Tribonacci3
+            Tribonacci1<-Tribonacci2
+            Tribonacci2<-Tribonacci3
+            Tribonacci3<-Tribonacci4
+            contadorTribonacci1 <- contadorTribonacci1 + 1
+            escreval ("")
+            fimenquanto
+            escreval (contadorTribonacci1,"º posição = ", Tribonacci4)
+
+
+         escreval ("")
+      caso 2
+            escreval("Digite um número maior que zero e menor que trinta e seis para a sequência: ")
+            Leia (limiteTribonacci)
+            escreva ("")
+
+         enquanto (limiteTribonacci>36) ou (limiteTribonacci<= 0) faca
+
+            Escreval (" _________________________________ ")
+            Escreval ("|                                 |")
+            Escreval ("|         OPÇÃO INVÁLIDA!         |")
+            Escreval ("|_________________________________|")
+            Escreval ("")
+            escreva("Digite um número maior que zero e menor que trinta e seis: ")
+            leia (limiteTribonacci)
+            escreval ("")
+            limpatela
+         fimenquanto
+
+
+         Tribonacci1 <-0
+         Tribonacci2 <-0
+         Tribonacci3 <-1
+         contadorTribonacci1 <-0
+         enquanto (contadorTribonacci1<limiteTribonacci)faca
+            Tribonacci4<- Tribonacci1+Tribonacci2+Tribonacci3
+            Tribonacci1<- Tribonacci2
+            Tribonacci2<- Tribonacci3
+            Tribonacci3<- Tribonacci4
+            contadorTribonacci1 <-contadorTribonacci1 + 1
+            contadorTribonacci2 <-contadorTribonacci1 + 0
+            escreval ("")
+            escreval (contadorTribonacci2,"º valor = ", Tribonacci4)
+         fimenquanto
+
+         escreval ("")
+      caso 3
+         Escreval (" _________________________________ ")
+         Escreval ("|                                 |")
+         Escreval ("| A sequência de Tribonacci é uma |")
+         Escreval ("| sequência numérica em que cada  |")
+         Escreval ("| termo é a soma dos três termos  |")
+         Escreval ("| anteriores (Tn = Tn-1 + Tn-2 +  |")
+         Escreval ("| Tn-3).                          |")
+         Escreval ("|                                 |")
+         Escreval ("|_________________________________|")
+      caso 4
+         limpatela
+      outrocaso
+         Escreval (" _________________________________ ")
+         Escreval ("|                                 |")
+         Escreval ("|    DIGITE UMA OPÇÃO VÁLIDA!     |")
+         Escreval ("|_________________________________|")
+      fimescolha
+   ate opcaoTribonacci = 4
+
+fimprocedimento
+
+
 
 Inicio
 
@@ -702,7 +837,7 @@ Inicio
          opcaoAlternado()
 
       caso 9
-         //tribonacci
+         tribonacci()
       caso 10
          limpatela
          escrevaL("FIM DO PROGRAMA.")
