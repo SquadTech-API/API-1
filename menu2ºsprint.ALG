@@ -2,9 +2,9 @@ Algoritmo "Menufunções"
 
 Var
 
-   opcao, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci, contador: inteiro
-   A1, A2, A3,D,C,N,OpcMenuPrimos :inteiro
-   f1, f2, f3,I1,P1,N1,C1: Inteiro
+   opcao, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci, contador,opcaofibonacci: inteiro
+   D,C,N,OpcMenuPrimos :inteiro
+   I1,P1,N1,C1: Inteiro
    aux,x:inteiro
    resp: caractere
 
@@ -38,6 +38,118 @@ inicio
    leia(opcao)
 
 fimprocedimento
+
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE FIBONACCI
+
+
+procedimento menufibonacci()
+Inicio
+
+   escrevaL(" ____________________________________________ ")
+   escrevaL("|                                            |")
+   escrevaL("|  SEQUENCIA DE FIBONACCI, (min 1°max 47°)   |")
+   escrevaL("|____________________________________________|")
+   escreval("")
+   escreval(" ____________________________ ")
+   escreval("|                            |")
+   escreval("|      Menu: FIBONACCI       |")
+   escreval("|____________________________|")
+   escreval("|                            |")
+   escreval("|          OPÇÔES            |")
+   escreval("|                            |")
+   escreval("| 1- Sequência de Fibonacci  |")
+   escreval("| 2- Escolha uma posição     |")
+   escreval("| 3- Como funciona?          |")
+   escreval("| 4- Sair                    |")
+   escreval("|____________________________|")
+   escreval("")
+   escreva("Escolher, Retorne as Opções => ")
+   leia (opcaofibonacci)
+   escreval("")
+
+fimprocedimento
+
+
+
+procedimento fibonacci()
+Var
+   fibonacci1, fibonacci2,fibonacci3 : inteiro
+   limite, contador: inteiro
+
+inicio
+
+
+
+   repita
+      menufibonacci()
+
+      escolha opcaofibonacci
+
+      caso 1
+         limpatela
+         escreva("Digite um numero => ")
+         escreva ("")
+         leia (limite)
+         fibonacci1 <--1
+         fibonacci2 <-1
+         contador <-0
+         enquanto (contador<limite)faca
+            fibonacci3<-fibonacci1+fibonacci2
+            fibonacci1<-fibonacci2
+            fibonacci2<-fibonacci3
+            contador <-contador+1
+            contador <-contador+0
+            escreval ("")
+            escreval (contador,"ºPosição = ", fibonacci3)
+         fimenquanto
+      caso 2
+         limpatela
+         escreval ("")
+         escreva("Digite a posição desejada na sequência de Fibonacci=> ")
+         escreva ("")
+         leia (limite)
+         escreva ("")
+         fibonacci1 <--1
+         fibonacci2 <-1
+         contador <-0
+         escreva ("")
+         enquanto (contador<limite)faca
+            fibonacci3<-fibonacci1+fibonacci2
+            fibonacci1<-fibonacci2
+            fibonacci2<-fibonacci3
+            contador <-contador+1
+            contador <-contador+0
+         fimenquanto
+         escreval ("")
+         escreval (contador,"ºPosição = ", fibonacci3)
+      caso 3
+         limpatela
+         escreval (" ____________________________________________ ")
+         escreval ("|                                            |")
+         escreval ("| A sequência de Fibonacci é uma sucessão    |")
+         escreval ("| infinita de números naturais proposta pelo |")
+         escreval ("| matemático Leonardo Pisa, mais conhecido   |")
+         escreval ("| como Fibonacci. Ela é formada pela soma    |")
+         escreval ("| dos dois números anteriores, começando     |")
+         escreval ("| com 0 e 1, e contadorinua com 1, 2, 3, 5, 8|")
+         escreval ("| ,13, 21, 34, 55, 89, 144, etc.             |")
+         escreval ("|____________________________________________|")
+
+      caso 4
+         limpatela
+      OutroCaso
+         limpatela
+         escreval(" ________________________________ ")
+         escreval("|                                |")
+         escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|________________________________|")
+      fimescolha
+   Ate (opcaofibonacci = 4)
+
+fimprocedimento
+
+
+
 
 // PROGRESSÃO GEOMÉTRICA
 
@@ -632,83 +744,9 @@ Inicio
       escolha opcao
 
       caso 1
-         repita
-            escreval (" ____________________________________________ ")
-            escreval ("|                                            |")
-            escreval ("| A sequência de Fibonacci é uma sucessão    |")
-            escreval ("| infinita de números naturais proposta pelo |")
-            escreval ("| matemático Leonardo Pisa, mais conhecido   |")
-            escreval ("| como Fibonacci. Ela é formada pela soma    |")
-            escreval ("| dos dois números anteriores, começando     |")
-            escreval ("| com 0 e 1, e continua com 1, 2, 3, 5, 8,   |")
-            escreval ("| 13, 21, 34, 55, 89, 144, etc.")            |")
-            escreval ("|____________________________________________|")
-            escrevaL (" ____________________________________________ ")
-            escrevaL ("|                                            |")
-            escrevaL ("|  SEQUENCIA DE FIBONACCI, (min 1°max 47°)   |")
-            escrevaL ("|____________________________________________|")
-            escreval ("")
-            escreval(" ____________________________ ")
-            escreval("|                            |")
-            escreval("|      Menu: FIBONACCI       |")
-            escreval("|____________________________|")
-            escreval("|                            |")
-            escreval("|          OPÇÔES            |")
-            escreval("|                            |")
-            escreval("| 1- Sequência de Fibonacci  |")
-            escreval("| 2- Escolha uma posição     |")
-            escreval("| 3- LIMPAR                  |")
-            escreval("| 4- Sair                    |")
-            escreval("|____________________________|")
-            escreval("")
-            escreva("Escolher, Retorne as Opções => ")
-            leia (A1)
-            escreval("")
-            escolha A1
-            caso 1
-               escreva("Digite um numero => ")
-               escreva ("")
-               leia (limite)
-               f1 <--1
-               f2 <-1
-               cont <-0
-               enquanto (cont<limite)faca
-                  f3<-f1+f2
-                  f1<-f2
-                  f2<-f3
-                  cont <-cont+1
-                  contador <-cont+0
-                  escreval ("")
-                  escreval (contador,"ºPosição = ", f3)
-               fimenquanto
-               escreval ("")
-            caso 2
-               escreval ("")
-               escreva("Digite a posição desejada na sequência de Fibonacci=> ")
-               escreva ("")
-               leia (limite)
-               escreva ("")
-               f1 <--1
-               f2 <-1
-               cont <-0
-               escreva ("")
-               enquanto (cont<limite)faca
-                  f3<-f1+f2
-                  f1<-f2
-                  f2<-f3
-                  cont <-cont+1
-                  contador <-cont+0
+      limpatela
+      fibonacci()
 
-               fimenquanto
-               escreval ("")
-               escreval (contador,"ºPosição = ", f3)
-            caso 3
-               limpatela
-
-            caso 4
-               escreval("")
-            fimescolha
-         ate (A1 = 4)
 
       caso 2
          limpatela
