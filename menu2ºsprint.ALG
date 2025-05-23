@@ -1,11 +1,13 @@
 Algoritmo "Menufunções"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
 
 Var
 
    opcao, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci, contador,opcaofibonacci: inteiro
    D,C,N,OpcMenuPrimos :inteiro
    I1,P1,N1,C1: Inteiro
-    OpcaoQuadradosPerfeitos:inteiro
+   opcaofatorial, OpcaoQuadradosPerfeitos:inteiro
 
 
 
@@ -820,7 +822,7 @@ inicio
          Escreval(" ____________________________________")
 
       caso 4
-      limpatela
+         limpatela
          escreval ("")
 
       outrocaso
@@ -834,7 +836,108 @@ inicio
 fimprocedimento
 
 
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA FATORIAL
 
+procedimento ExibirMenufatorial()
+inicio
+   escreval(" __________________________ ")
+   escreval("|                          |")
+   escreval("| Menu:SEQUENCIA FATORIAL  |")
+   escreval("|__________________________|")
+   escreval("|         OPÇÕES           |")
+   escreval("|                          |")
+   escreval("| OPÇÃO 1 - Posição        |")
+   escreval("| OPÇÃO 2 - Sequencia      |")
+   escreval("| OPÇÃO 3 - Definição      |")
+   escreval("| OPÇÃO 4 - Sair           |")
+   escreval("|__________________________|")
+   escreval("Digite uma Opção:")
+   leia(opcaofatorial)
+fimprocedimento
+
+procedimento opcoesfatorial()
+var
+   numerofatorial, i, fatorial: inteiro
+inicio
+   repita
+      ExibirMenufatorial()
+      limpatela
+
+      escolha opcaofatorial
+
+      caso 1
+         numerofatorial <- 0
+
+         enquanto (numerofatorial < 1) ou (numerofatorial > 13) faca
+            escreval("________________________________ ")
+            escreval("|                               |")
+            escreval("|      VALOR ENTRE 1 E 13       |")
+            escreval("|      POR DEFINIÇÂO 0!=1       |")
+            escreval("|_______________________________|")
+            escreva("Digite um número inteiro: ")
+            leia(numerofatorial)
+            limpatela
+         fimenquanto
+
+         fatorial <- 1
+         para i de numerofatorial ate 1 passo -1 faca
+            fatorial <- fatorial * i
+         fimpara
+         escreval(numerofatorial, "! = ", fatorial)
+
+      caso 2
+         numerofatorial <- 0
+         enquanto (numerofatorial <  1) ou (numerofatorial > 13) faca
+            escreval("________________________________ ")
+            escreval("|                               |")
+            escreval("|      VALOR ENTRE 1 E 13       |")
+            escreval("|      POR DEFINIÇÂO 0!=1       |")
+            escreval("|_______________________________|")
+            escreva("Digite um número inteiro: ")
+            leia(numerofatorial)
+            limpatela
+         fimenquanto
+
+         fatorial <- 1
+         para i de numerofatorial ate 1 passo -1 faca
+            fatorial <- fatorial * i
+            se i > 1 entao
+               escreva(i, " x")
+            senao
+               escreva(i, " =")
+            fimse
+         fimpara
+
+         escreval(fatorial)
+
+
+      caso 3
+         escreval("")
+         escreval(" ____________________________________________ ")
+         escreval("|                                            |")
+         escreval("| A sequência fatorial é uma sequência       |")
+         escreval("| numérica onde cada termo é o produto       |")
+         escreval("| de todos os números naturais positivos     |")
+         escreval("| menores ou iguais ao seu índice.           |")
+         escreval("| Exemplo: 5! = 5*4*3*2*1 = 120              |")
+         escreval("| Por definição 0!= 1                        |")
+         escreval("|____________________________________________|")
+         escreval(" FATORIAL: n! = n * (n-1) * (n-2) * ... * 1 ")
+
+
+      caso 4
+
+
+      outrocaso
+         escreval("__________________________________ ")
+         escreval("|                                 |")
+         escreval("| VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|_________________________________|")
+
+
+      fimescolha
+   ate(opcaofatorial = 4)
+fimprocedimento
 
 
 
@@ -853,8 +956,8 @@ Inicio
       escolha opcao
 
       caso 1
-      limpatela
-      fibonacci()
+         limpatela
+         fibonacci()
 
 
       caso 2
@@ -870,18 +973,18 @@ Inicio
          ate(OpcMenuPrimos = 5)
 
       caso 4
-         //fatorial
+         limpatela
+         opcoesfatorial()
 
       caso 5
-      limpatela
-      OpcaoEscolhidaQuadradosPerfeitos()
+         limpatela
+         OpcaoEscolhidaQuadradosPerfeitos()
 
       caso 6
          LimpaTela
          opcaoCubos()
 
       caso 7
-         //sequencia geometrica
          limpatela
          ProgressaoGeometrica()
 
