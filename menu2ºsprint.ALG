@@ -767,13 +767,14 @@ inicio
          escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
          escreval ("|__________________________________|")
          escreval ()
-         escreval (" ____________________________________________________________________ ")
-         escreval ("|                                                                    |")
-         escreval ("|   Um quadrado perfeito, ou número quadrado, é um número natural    |")
-         escreval ("|  que resulta da multiplicação de um número natural por ele mesmo.  |")
-         escreval ("| Em outras palavras, é um número que, ao extrair sua raiz quadrada, |")
-         escreval ("|           tem como resultado outro número natural.                 |")
-         escreval ("|____________________________________________________________________|")
+         escreval (" __________________________________________________________ ")
+         escreval ("|                                                          |")
+         escreval ("|      Um quadrado perfeito, ou número quadrado,           |")
+         escreval ("|    é um número natural que resulta da multiplicação      |")
+         escreval ("|  de um número natural por ele mesmo. Em outras palavras, |")
+         escreval ("|  é um número que, ao extrair sua raiz quadrada, tem como |")
+         escreval ("|  resultado outro número natural.                         |")
+         escreval ("|__________________________________________________________|")
          escreval ("")
 
 
@@ -832,6 +833,7 @@ inicio
       fimescolha
    ate (OpcaoQuadradosPerfeitos = 4)
 fimprocedimento
+
 
 
 
