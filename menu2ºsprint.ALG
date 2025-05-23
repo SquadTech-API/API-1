@@ -731,7 +731,6 @@ fimprocedimento
 
 // AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE QUADRADOS PERFEITOS
 
-
 procedimento ExibirMenuQuadradosPerfeitos()
 inicio
    escreval (" _________________________________ ")
@@ -833,6 +832,7 @@ inicio
       fimescolha
    ate (OpcaoQuadradosPerfeitos = 4)
 fimprocedimento
+
 
 
 
