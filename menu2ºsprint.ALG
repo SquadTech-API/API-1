@@ -5,8 +5,7 @@ Var
    opcao, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci, contador,opcaofibonacci: inteiro
    D,C,N,OpcMenuPrimos :inteiro
    I1,P1,N1,C1: Inteiro
-   aux,x:inteiro
-   resp: caractere
+    OpcaoQuadradosPerfeitos:inteiro
 
 
 
@@ -730,6 +729,114 @@ Inicio
 fimprocedimento
 
 
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE QUADRADOS PERFEITOS
+
+
+procedimento ExibirMenuQuadradosPerfeitos()
+inicio
+   escreval (" _________________________________ ")
+   escreval ("|                                 |")
+   escreval ("|       QUADRADOS PERFEITOS       |")
+   escreval ("|_________________________________|")
+   escreval ("|                                 |")
+   escreval ("|         1- Definição            |")
+   escreval ("|         2- Posição              |")
+   escreval ("|         3- Sequência            |")
+   escreval ("|         4- Sair                 |")
+   escreval ("|_________________________________|")
+   escreval ("")
+   escreva ("Digite a opção =>")
+   leia (OpcaoQuadradosPerfeitos)
+fimprocedimento
+
+
+procedimento OpcaoEscolhidaQuadradosPerfeitos()
+var
+   AuxiliarQuadradosPerfeitos,NumeroDesejadoQuadradosPerfeitos,NumeroQuadradosPerfeitos,LimiteQuadradosPerfeitos, contador:inteiro
+
+inicio
+   repita
+      ExibirMenuQuadradosPerfeitos
+
+      escolha OpcaoQuadradosPerfeitos
+
+      caso 1
+         limpatela
+         escreval (" __________________________________")
+         escreval ("|                                  |")
+         escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
+         escreval ("|__________________________________|")
+         escreval ()
+         escreval (" ____________________________________________________________________ ")
+         escreval ("|                                                                    |")
+         escreval ("|   Um quadrado perfeito, ou número quadrado, é um número natural    |")
+         escreval ("|  que resulta da multiplicação de um número natural por ele mesmo.  |")
+         escreval ("| Em outras palavras, é um número que, ao extrair sua raiz quadrada, |")
+         escreval ("|           tem como resultado outro número natural.                 |")
+         escreval ("|____________________________________________________________________|")
+         escreval ("")
+
+
+      caso 2
+         limpatela
+         escreval (" __________________________________")
+         escreval ("|                                  |")
+         escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
+         escreval ("|__________________________________|")
+         escreval ()
+         escreva("Digite o limite desejado: ")
+         leia(LimiteQuadradosPerfeitos)
+
+         para NumeroQuadradosPerfeitos := 1 até LimiteQuadradosPerfeitos faça
+            escreval("O quadrado de ", NumeroQuadradosPerfeitos, " é: ", NumeroQuadradosPerfeitos * NumeroQuadradosPerfeitos)
+         fimpara
+         escreval("")
+
+
+      caso 3
+         limpatela
+         escreval (" __________________________________")
+         escreval ("|                                  |")
+         escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
+         escreval ("|__________________________________|")
+         escreval ()
+         escreva("Digite o limite desejado: ")
+         leia(LimiteQuadradosPerfeitos)
+
+         contador <- 1
+         NumeroQuadradosPerfeitos <- contador * contador
+
+         limpatela
+
+         Escreval(" ____________________________________")
+
+         Escreval("  Quadrados perfeitos até ", LimiteQuadradosPerfeitos, ":")
+         Escreval("")
+         Enquanto (NumeroQuadradosPerfeitos <= LimiteQuadradosPerfeitos) faca
+            escreval(" ", contador, "^2 = ", NumeroQuadradosPerfeitos)
+            contador <- contador + 1
+            NumeroQuadradosPerfeitos <- contador * contador
+         FimEnquanto
+         Escreval(" ____________________________________")
+
+      caso 4
+      limpatela
+         escreval ("")
+
+      outrocaso
+         limpatela
+         escreval (" ________________ ")
+         escreval ("| OPÇÃO INVÁLIDA!|")
+         escreval ("|________________|")
+
+      fimescolha
+   ate (OpcaoQuadradosPerfeitos = 4)
+fimprocedimento
+
+
+
+
+
 
 Inicio
 
@@ -764,96 +871,8 @@ Inicio
          //fatorial
 
       caso 5
-         repita
-            escreval (" _______________________________________")
-            escreval ("|                                       |")
-            escreval ("|          QUADRADOS PERFEITOS          |")
-            escreval ("|_______________________________________|")
-            escreval ("|                                       |")
-            escreval ("|               SUBMENU                 |")
-            escreval ("|_______________________________________|")
-            escreval ("|                                       |")
-            escreval ("|   1- O que são Quadrados Perfeitos?   |")
-            escreval ("|  2- Sequência de Quadrados Perfeitos  |")
-            escreval ("| 3- Verificação de Quadrados Perfeitos |")
-            escreval ("|              0- Sair                  |")
-            escreval ("|_______________________________________|")
-            escreval ()
-            escreva ("Digite a opção: ")
-            leia (opcao)
-
-
-            escolha opcao
-
-            caso 1
-               repita
-                  escreval (" __________________________________")
-                  escreval ("|                                  |")
-                  escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
-                  escreval ("|__________________________________|")
-                  escreval ()
-                  escreval ("Um quadrado perfeito, ou número quadrado, é um número natural")
-                  escreval ("que resulta da multiplicação de um número natural por ele mesmo.")
-                  escreval ("Em outras palavras, é um número que, ao extrair sua raiz quadrada,")
-                  escreval ("tem como resultado outro número natural.")
-                  escreval ()
-                  escreval ("Deseja continuar? [S/N]")
-                  leia (resp)
-               ate (resp = "N") ou (resp = "n")
-
-            caso 2
-               repita
-                  escreval (" __________________________________")
-                  escreval ("|                                  |")
-                  escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
-                  escreval ("|__________________________________|")
-                  escreval ()
-                  escreva("Digite o limite desejado: ")
-                  leia(limite)
-
-                  para n := 1 até limite faça
-                     escreval("O quadrado de ", N, " é: ", N * N)
-                  fimpara
-                  escreval("")
-                  escreval ("Deseja continuar? [S/N]")
-                  leia (resp)
-               ate (resp = "N") ou (resp = "n")
-
-            caso 3
-               repita
-                  escreval (" ____________________________________")
-                  escreval ("|                                    |")
-                  escreval ("| VERIFICAÇÃO DE QUADRADOS PERFEITOS |")
-                  escreval ("|____________________________________|")
-                  escreval ()
-                  escreval ("insira o número desejado:")
-                  leia (x)
-                  aux<- 0
-                  para n de 1 ate x faca
-                     se n*n = x entao
-                        escreval ("O número escolhido é um quadrado perfeito!")
-                        escreval ("-Número escolhido:",x)
-                        escreval ("-Número base do quadrado perfeito:",N)
-                        aux<-1
-                        interrompa
-                     fimse
-                  fimpara
-
-                  se aux = 0 entao
-                     escreval ("O número escolhido NÃO é um quadrado perfeito")
-                     escreval ("-Número escolhido:",x)
-                  fimse
-                  escreval()
-                  escreval ("Deseja continuar? [S/N]")
-                  leia (resp)
-               ate (resp = "N") ou (resp = "n")
-
-            caso 0
-               escreval ("Saindo do programa...")
-            fimescolha
-            limpatela
-         ate opcao = 0
-
+      limpatela
+      OpcaoEscolhidaQuadradosPerfeitos()
 
       caso 6
          LimpaTela
