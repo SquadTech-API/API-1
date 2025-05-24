@@ -1,15 +1,14 @@
-Algoritmo "Menufunções"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
+Algoritmo "SUPER CALC SQUAD"
 
 Var
 
-   opcao, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci, contador,opcaofibonacci: inteiro
+   opcaoMenuP, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci,contador,opcaofibonacci: inteiro
    D,C,N,OpcMenuPrimos :inteiro
    I1,P1,N1,C1: Inteiro
    opcaofatorial, OpcaoQuadradosPerfeitos:inteiro
 
 
+   // AQUI COMEÇA OS PROCEDIMENTO DO MENU PRINCIPAL
 
 procedimento opcoes()
 inicio
@@ -28,7 +27,7 @@ inicio
    escrevaL("4. Sequência Fatorial")
    escrevaL("5. Sequência de Quadrados Perfeitos")
    escrevaL("6. Sequência de Cubos")
-   escrevaL("7. Sequência Geométrica")
+   escrevaL("7. Sequência P. Geométrica")
    escrevaL("8. Sequência Alternada")
    escrevaL("9. Sequência Tribonacci")
    escrevaL("10. Encerrar o programa")
@@ -36,12 +35,11 @@ inicio
    escrevaL("")//quebradelinha
 
    escreva("-Opção: ")
-   leia(opcao)
+   leia(opcaoMenuP)
 
 fimprocedimento
 
 // AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE FIBONACCI
-
 
 procedimento menufibonacci()
 Inicio
@@ -150,75 +148,8 @@ inicio
 fimprocedimento
 
 
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE NUMEROS TRIANGULARES
 
-
-// PROGRESSÃO GEOMÉTRICA
-
-Procedimento ProgressaoGeometrica()
-Var
-   razao, termo, ProgGeometrica, contador, contador2 :real
-   Menu :inteiro
-Inicio
-   enquanto Menu <> 3 faca
-      contador2 <-0
-      escreval(" ______________________________")
-      escreval("|    Progressão Geométrica     |")
-      escreval("|______________________________|")
-      escreval("|             MENU             |")
-      escreval("| 1 - Iniciar Progressão       |")
-      escreval("| 2 - Como funciona?           |")
-      escreval("| 3 - Retornar ao Menu         |")
-      escreval("|______________________________|")
-      escreva("Opção: ")
-      leia(Menu)
-      escolha Menu
-      caso 1
-         limpatela
-         escreva ("DEFINA O TERMO DA PROGRESSÃO : ")
-         leia (termo)
-         escreva ("DEFINA A RAZÃO DA PROGRESSÃO : ")
-         leia (razao)
-         escreva ("DEFINA O NÚMERO DE REPETIÇÕES : ")
-         leia (contador)
-         limpatela
-         escreval ("======= PROGRESSÃO GEOMÉTRICA DE ",termo," POR ",razao," =======")
-         escreval ()
-         enquanto contador > 0 faca
-            ProgGeometrica <- (termo * razao)
-            contador2 <- contador2+1
-            escreval(contador2,"º:",termo)
-            termo <- ProgGeometrica
-            contador <- (contador - 1)
-            se termo > 999999999999999  entao //impede o programa de encontrar o erro "floating point".
-               limpatela
-               escreval ("ERRO : VALOR INCALCULÁVEL")
-               contador <- 0
-            fimse
-            se contador = 0 entao
-               Escreval("Aperte ENTER para retornar ao submenu.")
-               leia(Menu)
-               limpatela
-            fimse
-         fimenquanto
-      caso 2
-         limpatela
-         escreval(" _____________________________________________________")
-         escreval("|                    COMO FUNCIONA?                   |")
-         escreval("|_____________________________________________________|")
-         escreval("| Progressão Geométrica (PG) é uma sequência numérica |")
-         escreval("| onde cada termo, a partir do segundo, é obtido      |")
-         escreval("| multiplicando o anterior por uma constante chamada  |")
-         escreval("| razão (q). Exemplo: (2, 4, 8, 16, 32...)            |")
-         escreval("|_____________________________________________________|")
-         escreval ("Aperte enter para continuar")
-         leia (Menu)
-         limpatela
-      caso 3
-         limpatela
-      fimescolha
-   fimenquanto
-fimprocedimento
-// NUMEROS TRIANGULARES
 Procedimento NumerosTriangulares()
 Var
    ValorTriangular: real
@@ -286,219 +217,305 @@ Inicio
    fimenquanto
 FimProcedimento
 
-// PROCEDIMENTO PRIMOS
+
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE NUMEROS PRIMOS
 
 procedimento ExibirMenuPrimos()
-
 inicio
-   escreval(" _______________________________")
-   escreval("|                               |")
-   escreval("|     MENU: NUMEROS PRIMOS      |")
-   escreval("|_______________________________|")
-   escreval("|         OPÇÕES                |")
-   escreval("|                               |")
-   escreval("| OPÇÃO 1 - Posições Sequenciais|")
-   escreval("| OPÇÃO 2 - Sequencia nº Primos |")
-   escreval("| OPÇÃO 3 - Definição           |")
-   escreval("| OPÇÃO 4 - Sair                |")
-   escreval("|______________________________ |")
+   escreval(" __________________________")
+   escreval("|                          |")
+   escreval("|   Menu: NUMEROS PRIMOS   |")
+   escreval("|__________________________|")
+   escreval("|         OPÇÕES           |")
+   escreval("|                          |")
+   escreval("| OPÇÃO 1 - Divisores      |")
+   escreval("| OPÇÃO 2 - Sequencia      |")
+   escreval("| OPÇÃO 3 - Limpar tela    |")
+   escreval("| OPÇÃO 4 - Definição      |")
+   escreval("| OPÇÃO 5 - Sair           |")
+   escreval("|__________________________|")
    escreva(" Digite uma opção => ")
    leia (OpcMenuPrimos)
 fimprocedimento
 
+procedimento MenuPrimos()
+inicio
+   ExibirMenuPrimos()
+   enquanto (OpcMenuPrimos > 5) ou (OpcMenuPrimos < 1) faca
+      limpatela
+      escreval("Escolha uma opção valida!")
+      ExibirMenuPrimos()
+   fimenquanto
+fimprocedimento
+
 procedimento OpcEscolhidaPrimos()
+inicio
+   MenuPrimos()
+   escolha OpcMenuPrimos
+   caso 1
+      limpatela
+      escreval("")
+      escreval ("Digite um numero inteiro:")
+      leia(N)
+      C <- N
+      D <- 0
+      escreva("Divisores :")
+      repita
+         se (N%C=0)entao
+            escreva(C)
+            D<- D+1
+         fimse
+         C <-C-1
+      ate (C<1)
+      escreval ("")
+      se (D=2) entao
+         escreval(N, " É um numero primo!")
+      senao
+         escreval(N," Não é um numero primo!")
+      fimse
+
+   caso 2
+      limpatela
+      escreval("")
+      escreval(" Digite um numero:")
+      leia (N1)
+      escreval("Sequencia de numeros primos:")
+      para C1 <- 1 ate N1 faca
+         P1 <-0
+         para I1 <- 1 ate C1 faca
+            se (C1%I1=0) entao
+               P1 <- P1+1
+            fimse
+         fimpara
+         se (P1=2) entao
+            escreva(C1)
+         fimse
+      fimpara
+      escreval("")
+
+   caso 3
+      limpatela
+
+   caso 4
+      limpatela
+      escreval(" ______________________________________________")
+      escreval("|                                              |")
+      escreval("|Um número primo é aquele que possue apenas 2  |")
+      escreval("|divisores , o numero 1 e ele mesmo.           |")
+      escreval("|______________________________________________|")
+
+   caso 5
+      escreval("")
+   fimescolha
+fimprocedimento
+
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA FATORIAL
+
+procedimento ExibirMenufatorial()
+inicio
+   escreval(" __________________________ ")
+   escreval("|                          |")
+   escreval("| Menu:SEQUENCIA FATORIAL  |")
+   escreval("|__________________________|")
+   escreval("|         OPÇÕES           |")
+   escreval("|                          |")
+   escreval("| OPÇÃO 1 - Posição        |")
+   escreval("| OPÇÃO 2 - Sequencia      |")
+   escreval("| OPÇÃO 3 - Definição      |")
+   escreval("| OPÇÃO 4 - Sair           |")
+   escreval("|__________________________|")
+   escreval("Digite uma Opção:")
+   leia(opcaofatorial)
+fimprocedimento
+
+procedimento opcoesfatorial()
 var
-   DivisoresPrimos,ContadorPrimos,NumerosPrimos:inteiro
-   SegContadorPrimos1,Primos1,NumerosPrimos1,ContadorPrimos1:inteiro
-   QuantidadeDesejada, NumeroAtual, TotalPrimos, Divisor, ContadorDivisores: inteiro
+   numerofatorial, i, fatorial: inteiro
 inicio
    repita
-      ExibirMenuPrimos()
-      escolha OpcMenuPrimos
+      ExibirMenufatorial()
+      limpatela
+
+      escolha opcaofatorial
+
+      caso 1
+         numerofatorial <- 0
+
+         enquanto (numerofatorial < 1) ou (numerofatorial > 13) faca
+            escreval("________________________________ ")
+            escreval("|                               |")
+            escreval("|      VALOR ENTRE 1 E 13       |")
+            escreval("|      POR DEFINIÇÂO 0!=1       |")
+            escreval("|_______________________________|")
+            escreva("Digite um número inteiro: ")
+            leia(numerofatorial)
+            limpatela
+         fimenquanto
+
+         fatorial <- 1
+         para i de numerofatorial ate 1 passo -1 faca
+            fatorial <- fatorial * i
+         fimpara
+         escreval(numerofatorial, "! = ", fatorial)
+
+      caso 2
+         numerofatorial <- 0
+         enquanto (numerofatorial <  1) ou (numerofatorial > 13) faca
+            escreval("________________________________ ")
+            escreval("|                               |")
+            escreval("|      VALOR ENTRE 1 E 13       |")
+            escreval("|      POR DEFINIÇÂO 0!=1       |")
+            escreval("|_______________________________|")
+            escreva("Digite um número inteiro: ")
+            leia(numerofatorial)
+            limpatela
+         fimenquanto
+
+         fatorial <- 1
+         para i de numerofatorial ate 1 passo -1 faca
+            fatorial <- fatorial * i
+            se i > 1 entao
+               escreva(i, " x")
+            senao
+               escreva(i, " =")
+            fimse
+         fimpara
+
+         escreval(fatorial)
+
+
+      caso 3
+         escreval("")
+         escreval(" ____________________________________________ ")
+         escreval("|                                            |")
+         escreval("| A sequência fatorial é uma sequência       |")
+         escreval("| numérica onde cada termo é o produto       |")
+         escreval("| de todos os números naturais positivos     |")
+         escreval("| menores ou iguais ao seu índice.           |")
+         escreval("| Exemplo: 5! = 5*4*3*2*1 = 120              |")
+         escreval("| Por definição 0!= 1                        |")
+         escreval("|____________________________________________|")
+         escreval(" FATORIAL: n! = n * (n-1) * (n-2) * ... * 1 ")
+
+
+      caso 4
+
+
+      outrocaso
+         escreval("__________________________________ ")
+         escreval("|                                 |")
+         escreval("| VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|_________________________________|")
+
+
+      fimescolha
+   ate(opcaofatorial = 4)
+fimprocedimento
+
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE QUADRADOS PERFEITOS
+
+procedimento ExibirMenuQuadradosPerfeitos()
+inicio
+   escreval (" _________________________________ ")
+   escreval ("|                                 |")
+   escreval ("|       QUADRADOS PERFEITOS       |")
+   escreval ("|_________________________________|")
+   escreval ("|                                 |")
+   escreval ("|         1- Definição            |")
+   escreval ("|         2- Posição              |")
+   escreval ("|         3- Sequência            |")
+   escreval ("|         4- Sair                 |")
+   escreval ("|_________________________________|")
+   escreval ("")
+   escreva ("Digite a opção =>")
+   leia (OpcaoQuadradosPerfeitos)
+fimprocedimento
+
+
+procedimento OpcaoEscolhidaQuadradosPerfeitos()
+var
+   AuxiliarQuadradosPerfeitos,NumeroDesejadoQuadradosPerfeitos,NumeroQuadradosPerfeitos,LimiteQuadradosPerfeitos, contador:inteiro
+
+inicio
+   repita
+      ExibirMenuQuadradosPerfeitos
+
+      escolha OpcaoQuadradosPerfeitos
+
       caso 1
          limpatela
+         escreval (" __________________________________")
+         escreval ("|                                  |")
+         escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
+         escreval ("|__________________________________|")
+         escreval ()
+         escreval (" ____________________________________________________________________ ")
+         escreval ("|                                                                    |")
+         escreval ("|   Um quadrado perfeito, ou número quadrado, é um número natural    |")
+         escreval ("|  que resulta da multiplicação de um número natural por ele mesmo.  |")
+         escreval ("| Em outras palavras, é um número que, ao extrair sua raiz quadrada, |")
+         escreval ("|           tem como resultado outro número natural.                 |")
+         escreval ("|____________________________________________________________________|")
+         escreval ("")
 
-         QuantidadeDesejada <- 0
-         escreval("")
-         Enquanto (QuantidadeDesejada <1) faca
-         escreval("Digite quantos números primos você deseja ver:")
-         leia(QuantidadeDesejada)
-         limpatela
-         fimenquanto
-
-         NumeroAtual <- 2
-         TotalPrimos <- 0
-
-         escreval("Os primeiros ", QuantidadeDesejada, " números primos são:")
-
-         escreval("") // QUEBRA DE LINHA
-
-         enquanto (TotalPrimos < QuantidadeDesejada) faca
-            ContadorDivisores <- 0
-
-            para Divisor <- 1 ate NumeroAtual faca
-               se (NumeroAtual % Divisor = 0) entao
-                  ContadorDivisores <- ContadorDivisores + 1
-               fimse
-            fimpara
-
-            se (ContadorDivisores = 2) entao
-               TotalPrimos <- TotalPrimos + 1
-               escreval(TotalPrimos, "º posição: ", NumeroAtual)
-            fimse
-
-            NumeroAtual <- NumeroAtual + 1
-         fimenquanto
 
       caso 2
          limpatela
+         escreval (" __________________________________")
+         escreval ("|                                  |")
+         escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
+         escreval ("|__________________________________|")
+         escreval ()
+         escreva("Digite o limite desejado: ")
+         leia(LimiteQuadradosPerfeitos)
 
-         NumerosPrimos1 <- 0
-         escreval("")
-
-         enquanto (NumerosPrimos1 < 1) faca
-         escreval("Digite um número inteiro:")
-         leia (NumerosPrimos1)
-         limpatela
-         fimenquanto
-
-
-         escreval("Sequencia de numeros primos:")
-         para ContadorPrimos1 <- 1 ate NumerosPrimos1 faca
-            Primos1 <-0
-            para SegContadorPrimos1 <- 1 ate ContadorPrimos1 faca
-               se (ContadorPrimos1%SegContadorPrimos1=0) entao
-                  Primos1 <- Primos1+1
-               fimse
-            fimpara
-            se (Primos1=2) entao
-               escreva(ContadorPrimos1)
-            fimse
+         para NumeroQuadradosPerfeitos := 1 até LimiteQuadradosPerfeitos faça
+            escreval("O quadrado de ", NumeroQuadradosPerfeitos, " é: ", NumeroQuadradosPerfeitos * NumeroQuadradosPerfeitos)
          fimpara
          escreval("")
 
+
       caso 3
          limpatela
-         escreval(" ______________________________________________")
-         escreval("|                                              |")
-         escreval("|Um número primo é aquele que possue apenas 2  |")
-         escreval("|divisores , o numero 1 e ele mesmo.           |")
-         escreval("|______________________________________________|")
+         escreval (" __________________________________")
+         escreval ("|                                  |")
+         escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
+         escreval ("|__________________________________|")
+         escreval ()
+         escreva("Digite o limite desejado: ")
+         leia(LimiteQuadradosPerfeitos)
+
+         contador <- 1
+         NumeroQuadradosPerfeitos <- contador * contador
+
+         limpatela
+
+         Escreval(" ____________________________________")
+
+         Escreval("  Quadrados perfeitos até ", LimiteQuadradosPerfeitos, ":")
+         Escreval("")
+         Enquanto (NumeroQuadradosPerfeitos <= LimiteQuadradosPerfeitos) faca
+            escreval(" ", contador, "^2 = ", NumeroQuadradosPerfeitos)
+            contador <- contador + 1
+            NumeroQuadradosPerfeitos <- contador * contador
+         FimEnquanto
+         Escreval(" ____________________________________")
 
       caso 4
-         escreval("")
+         limpatela
+         escreval ("")
 
       outrocaso
          limpatela
-         escreval(" ____________________")
-         escreval("|  OPÇÃO INVALIDA!   |")
-         escreval("|____________________|")
-      fimescolha
-   até OpcMenuPrimos = 4
-fimprocedimento
-
-
-
-procedimento menuAlternado()
-Inicio
-
-   escreval("")
-   escreval(" ________________________________ ")
-   escreval("|                                |")
-   escreval("|    MENU SEQUÊNCIA ALTERNADA    |")
-   escreval("|________________________________|")
-   escreval("|                                |")
-   escreval("|             OPÇÕES             |")
-   escreval("|                                |")
-   escreval("| 1- Sequência Alternada         |")
-   escreval("| 2- Escolha uma posição         |")
-   escreval("| 3- Explicação Seq. alternda    |")
-   escreval("| 4- Retornar Menu Principal     |")
-   escreval("|________________________________|")
-   escreval("")
-   Escreva("Selecione uma Opção: ")
-   Leia(opcaoMenuAlternado)
-
-fimprocedimento
-
-Procedimento opcaoAlternado()
-
-Var
-
-   cont, limiteAlternado, numAlternado: Inteiro
-
-Inicio
-
-   Repita
-
-      menuAlternado()
-
-      LimpaTela
-
-      escolha opcaoMenuAlternado
-
-      caso 1
-
-         escreva("Digite um número => ")
-         escreva ("")
-         leia (limiteAlternado)
-         cont <- 1
-         enquanto (cont <= limiteAlternado) faca
-            se (cont % 2 = 0) entao
-               numAlternado <- cont * -1
-            senao
-               numAlternado <- cont
-            fimse
-            escreval ("")
-            escreval (cont,"º Posição = ", numAlternado)
-            cont <- cont + 1
-         fimenquanto
-         escreval ("")
-
-      caso 2
-
-         escreval ("")
-         escreva("Digite a posição desejada na sequência alternada => ")
-         escreva ("")
-         leia (limiteAlternado)
-         escreva ("")
-         se (limiteAlternado % 2 = 0) entao
-            numAlternado <- limiteAlternado * -1
-         senao
-            numAlternado <- limiteAlternado
-         fimse
-         escreval ("")
-         escreval (limiteAlternado,"º Posição = ", numAlternado)
-
-      caso 3
-
-         escrevaL (" ____________________________________________ ")
-         escrevaL ("|                                            |")
-         escrevaL ("|            SEQUÊNCIA ALTERNADA             |")
-         escreval (" ____________________________________________ ")
-         escreval ("|                                            |")
-         escreval ("| Uma sequência alternada é composta por     |")
-         escreval ("| números inteiros com sinais alternados.    |")
-         escreval ("| Exemplo: 1, -2, 3, -4, 5, -6, ...          |")
-         escreval ("|____________________________________________|")
-
-      caso 4
-
-      outrocaso
-         escreval(" ________________________________ ")
-         escreval("|                                |")
-         escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
-         escreval("|________________________________|")
-
+         escreval (" ________________ ")
+         escreval ("| OPÇÃO INVÁLIDA!|")
+         escreval ("|________________|")
 
       fimescolha
-
-   Ate (opcaoMenuAlternado = 4)
-
-
+   ate (OpcaoQuadradosPerfeitos = 4)
 fimprocedimento
 
-// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE NUMEROS CUBICOS
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE CUBOS PERFEITOS
 
 Procedimento menuCubos()
 
@@ -622,9 +639,177 @@ Inicio
 
 FimProcedimento
 
-//SEQUÊNCIA DE TRIBONACCI
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE P. GEOMETRICA
 
-procedimento submenu()
+Procedimento ProgressaoGeometrica()
+Var
+   razao, termo, ProgGeometrica, contador, contador2 :real
+   Menu :inteiro
+Inicio
+   enquanto Menu <> 3 faca
+      contador2 <-0
+      escreval(" ______________________________")
+      escreval("|    Progressão Geométrica     |")
+      escreval("|______________________________|")
+      escreval("|             MENU             |")
+      escreval("| 1 - Iniciar Progressão       |")
+      escreval("| 2 - Como funciona?           |")
+      escreval("| 3 - Retornar ao Menu         |")
+      escreval("|______________________________|")
+      escreva("Opção: ")
+      leia(Menu)
+      escolha Menu
+      caso 1
+         limpatela
+         escreva ("DEFINA O TERMO DA PROGRESSÃO : ")
+         leia (termo)
+         escreva ("DEFINA A RAZÃO DA PROGRESSÃO : ")
+         leia (razao)
+         escreva ("DEFINA O NÚMERO DE REPETIÇÕES : ")
+         leia (contador)
+         limpatela
+         escreval ("======= PROGRESSÃO GEOMÉTRICA DE ",termo," POR ",razao," =======")
+         escreval ()
+         enquanto contador > 0 faca
+            ProgGeometrica <- (termo * razao)
+            contador2 <- contador2+1
+            escreval(contador2,"º:",termo)
+            termo <- ProgGeometrica
+            contador <- (contador - 1)
+            se termo > 999999999999999  entao //impede o programa de encontrar o erro "floating point".
+               limpatela
+               escreval ("ERRO : VALOR INCALCULÁVEL")
+               contador <- 0
+            fimse
+            se contador = 0 entao
+               Escreval("Aperte ENTER para retornar ao submenu.")
+               leia(Menu)
+               limpatela
+            fimse
+         fimenquanto
+      caso 2
+         limpatela
+         escreval(" _____________________________________________________")
+         escreval("|                    COMO FUNCIONA?                   |")
+         escreval("|_____________________________________________________|")
+         escreval("| Progressão Geométrica (PG) é uma sequência numérica |")
+         escreval("| onde cada termo, a partir do segundo, é obtido      |")
+         escreval("| multiplicando o anterior por uma constante chamada  |")
+         escreval("| razão (q). Exemplo: (2, 4, 8, 16, 32...)            |")
+         escreval("|_____________________________________________________|")
+         escreval ("Aperte enter para continuar")
+         leia (Menu)
+         limpatela
+      caso 3
+         limpatela
+      fimescolha
+   fimenquanto
+fimprocedimento
+
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA ALTERNADA
+
+procedimento menuAlternado()
+Inicio
+
+   escreval("")
+   escreval(" ________________________________ ")
+   escreval("|                                |")
+   escreval("|    MENU SEQUÊNCIA ALTERNADA    |")
+   escreval("|________________________________|")
+   escreval("|                                |")
+   escreval("|             OPÇÕES             |")
+   escreval("|                                |")
+   escreval("| 1- Sequência Alternada         |")
+   escreval("| 2- Escolha uma posição         |")
+   escreval("| 3- Explicação Seq. alternda    |")
+   escreval("| 4- Retornar Menu Principal     |")
+   escreval("|________________________________|")
+   escreval("")
+   Escreva("Selecione uma Opção: ")
+   Leia(opcaoMenuAlternado)
+
+fimprocedimento
+
+Procedimento opcaoAlternado()
+
+Var
+
+   cont, limiteAlternado, numAlternado: Inteiro
+
+Inicio
+
+   Repita
+
+      menuAlternado()
+
+      LimpaTela
+
+      escolha opcaoMenuAlternado
+
+      caso 1
+
+         escreva("Digite um número => ")
+         escreva ("")
+         leia (limiteAlternado)
+         cont <- 1
+         enquanto (cont <= limiteAlternado) faca
+            se (cont % 2 = 0) entao
+               numAlternado <- cont * -1
+            senao
+               numAlternado <- cont
+            fimse
+            escreval ("")
+            escreval (cont,"º Posição = ", numAlternado)
+            cont <- cont + 1
+         fimenquanto
+         escreval ("")
+
+      caso 2
+
+         escreval ("")
+         escreva("Digite a posição desejada na sequência alternada => ")
+         escreva ("")
+         leia (limiteAlternado)
+         escreva ("")
+         se (limiteAlternado % 2 = 0) entao
+            numAlternado <- limiteAlternado * -1
+         senao
+            numAlternado <- limiteAlternado
+         fimse
+         escreval ("")
+         escreval (limiteAlternado,"º Posição = ", numAlternado)
+
+      caso 3
+
+         escrevaL (" ____________________________________________ ")
+         escrevaL ("|                                            |")
+         escrevaL ("|            SEQUÊNCIA ALTERNADA             |")
+         escreval (" ____________________________________________ ")
+         escreval ("|                                            |")
+         escreval ("| Uma sequência alternada é composta por     |")
+         escreval ("| números inteiros com sinais alternados.    |")
+         escreval ("| Exemplo: 1, -2, 3, -4, 5, -6, ...          |")
+         escreval ("|____________________________________________|")
+
+      caso 4
+
+      outrocaso
+         escreval(" ________________________________ ")
+         escreval("|                                |")
+         escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
+         escreval("|________________________________|")
+
+
+      fimescolha
+
+   Ate (opcaoMenuAlternado = 4)
+
+
+fimprocedimento
+
+// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE TRIBONACCI
+
+procedimento subMenuTribonacci()
 
 inicio
    escreval("")
@@ -647,7 +832,6 @@ inicio
    escreval("")
 fimprocedimento
 
-//procedimento tribonacci
 procedimento tribonacci()
 
 Var
@@ -657,7 +841,7 @@ Var
 Inicio
    Repita
       escreval("")
-      submenu()
+      subMenuTribonacci()
       escreval("")
       escolha (opcaoTribonacci)
       caso 1
@@ -751,229 +935,15 @@ Inicio
 fimprocedimento
 
 
-// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE QUADRADOS PERFEITOS
-
-procedimento ExibirMenuQuadradosPerfeitos()
-inicio
-   escreval (" _________________________________ ")
-   escreval ("|                                 |")
-   escreval ("|       QUADRADOS PERFEITOS       |")
-   escreval ("|_________________________________|")
-   escreval ("|                                 |")
-   escreval ("|         1- Definição            |")
-   escreval ("|         2- Posição              |")
-   escreval ("|         3- Sequência            |")
-   escreval ("|         4- Sair                 |")
-   escreval ("|_________________________________|")
-   escreval ("")
-   escreva ("Digite a opção =>")
-   leia (OpcaoQuadradosPerfeitos)
-fimprocedimento
-
-
-procedimento OpcaoEscolhidaQuadradosPerfeitos()
-var
-   AuxiliarQuadradosPerfeitos,NumeroDesejadoQuadradosPerfeitos,NumeroQuadradosPerfeitos,LimiteQuadradosPerfeitos, contador:inteiro
-
-inicio
-   repita
-      ExibirMenuQuadradosPerfeitos
-
-      escolha OpcaoQuadradosPerfeitos
-
-      caso 1
-         limpatela
-         escreval (" __________________________________")
-         escreval ("|                                  |")
-         escreval ("|  O QUE SÃO QUADRADOS PERFEITOS?  |")
-         escreval ("|__________________________________|")
-         escreval ()
-         escreval (" __________________________________________________________ ")
-         escreval ("|                                                          |")
-         escreval ("|      Um quadrado perfeito, ou número quadrado,           |")
-         escreval ("|    é um número natural que resulta da multiplicação      |")
-         escreval ("|  de um número natural por ele mesmo. Em outras palavras, |")
-         escreval ("|  é um número que, ao extrair sua raiz quadrada, tem como |")
-         escreval ("|  resultado outro número natural.                         |")
-         escreval ("|__________________________________________________________|")
-         escreval ("")
-
-
-      caso 2
-         limpatela
-         escreval (" __________________________________")
-         escreval ("|                                  |")
-         escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
-         escreval ("|__________________________________|")
-         escreval ()
-         escreva("Digite o limite desejado: ")
-         leia(LimiteQuadradosPerfeitos)
-
-         para NumeroQuadradosPerfeitos := 1 até LimiteQuadradosPerfeitos faça
-            escreval("O quadrado de ", NumeroQuadradosPerfeitos, " é: ", NumeroQuadradosPerfeitos * NumeroQuadradosPerfeitos)
-         fimpara
-         escreval("")
-
-
-      caso 3
-         limpatela
-         escreval (" __________________________________")
-         escreval ("|                                  |")
-         escreval ("| SEQUÊNCIA DE QUADRADOS PERFEITOS |")
-         escreval ("|__________________________________|")
-         escreval ()
-         escreva("Digite o limite desejado: ")
-         leia(LimiteQuadradosPerfeitos)
-
-         contador <- 1
-         NumeroQuadradosPerfeitos <- contador * contador
-
-         limpatela
-
-         Escreval(" ____________________________________")
-
-         Escreval("  Quadrados perfeitos até ", LimiteQuadradosPerfeitos, ":")
-         Escreval("")
-         Enquanto (NumeroQuadradosPerfeitos <= LimiteQuadradosPerfeitos) faca
-            escreval(" ", contador, "^2 = ", NumeroQuadradosPerfeitos)
-            contador <- contador + 1
-            NumeroQuadradosPerfeitos <- contador * contador
-         FimEnquanto
-         Escreval(" ____________________________________")
-
-      caso 4
-         limpatela
-         escreval ("")
-
-      outrocaso
-         limpatela
-         escreval (" ________________ ")
-         escreval ("| OPÇÃO INVÁLIDA!|")
-         escreval ("|________________|")
-
-      fimescolha
-   ate (OpcaoQuadradosPerfeitos = 4)
-fimprocedimento
-
-
-// AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA FATORIAL
-
-procedimento ExibirMenufatorial()
-inicio
-   escreval(" __________________________ ")
-   escreval("|                          |")
-   escreval("| Menu:SEQUENCIA FATORIAL  |")
-   escreval("|__________________________|")
-   escreval("|         OPÇÕES           |")
-   escreval("|                          |")
-   escreval("| OPÇÃO 1 - Posição        |")
-   escreval("| OPÇÃO 2 - Sequencia      |")
-   escreval("| OPÇÃO 3 - Definição      |")
-   escreval("| OPÇÃO 4 - Sair           |")
-   escreval("|__________________________|")
-   escreval("Digite uma Opção:")
-   leia(opcaofatorial)
-fimprocedimento
-
-procedimento opcoesfatorial()
-var
-   numerofatorial, i, fatorial: inteiro
-inicio
-   repita
-      ExibirMenufatorial()
-      limpatela
-
-      escolha opcaofatorial
-
-      caso 1
-         numerofatorial <- 0
-
-         enquanto (numerofatorial < 1) ou (numerofatorial > 13) faca
-            escreval("________________________________ ")
-            escreval("|                               |")
-            escreval("|      VALOR ENTRE 1 E 13       |")
-            escreval("|      POR DEFINIÇÂO 0!=1       |")
-            escreval("|_______________________________|")
-            escreva("Digite um número inteiro: ")
-            leia(numerofatorial)
-            limpatela
-         fimenquanto
-
-         fatorial <- 1
-         para i de numerofatorial ate 1 passo -1 faca
-            fatorial <- fatorial * i
-         fimpara
-         escreval(numerofatorial, "! = ", fatorial)
-
-      caso 2
-         numerofatorial <- 0
-         enquanto (numerofatorial <  1) ou (numerofatorial > 13) faca
-            escreval("________________________________ ")
-            escreval("|                               |")
-            escreval("|      VALOR ENTRE 1 E 13       |")
-            escreval("|      POR DEFINIÇÂO 0!=1       |")
-            escreval("|_______________________________|")
-            escreva("Digite um número inteiro: ")
-            leia(numerofatorial)
-            limpatela
-         fimenquanto
-
-         fatorial <- 1
-         para i de numerofatorial ate 1 passo -1 faca
-            fatorial <- fatorial * i
-            se i > 1 entao
-               escreva(i, " x")
-            senao
-               escreva(i, " =")
-            fimse
-         fimpara
-
-         escreval(fatorial)
-
-
-      caso 3
-         escreval("")
-         escreval(" ____________________________________________ ")
-         escreval("|                                            |")
-         escreval("| A sequência fatorial é uma sequência       |")
-         escreval("| numérica onde cada termo é o produto       |")
-         escreval("| de todos os números naturais positivos     |")
-         escreval("| menores ou iguais ao seu índice.           |")
-         escreval("| Exemplo: 5! = 5*4*3*2*1 = 120              |")
-         escreval("| Por definição 0!= 1                        |")
-         escreval("|____________________________________________|")
-         escreval(" FATORIAL: n! = n * (n-1) * (n-2) * ... * 1 ")
-
-
-      caso 4
-
-
-      outrocaso
-         escreval("__________________________________ ")
-         escreval("|                                 |")
-         escreval("| VALOR INVÁLIDO. TENTE NOVAMENTE |")
-         escreval("|_________________________________|")
-
-
-      fimescolha
-   ate(opcaofatorial = 4)
-fimprocedimento
-
-
-
-
-
 Inicio
 
+   //AQUI CHAMAMOS O PROCEDIMENTOS PARA IR AO MENU PRINCIPAL
 
-
-   //aqui chamamos o procedimento pra ir ao menu:
    repita
-
 
       opcoes()
 
-      escolha opcao
+      Escolha opcaoMenuP
 
       caso 1
          limpatela
@@ -984,13 +954,9 @@ Inicio
          limpatela
          NumerosTriangulares()
 
-
-
-
       caso 3
-         repita
-            OpcEscolhidaPrimos()
-         ate(OpcMenuPrimos = 4)
+         limpatela
+         OpcEscolhidaPrimos()
 
       caso 4
          limpatela
@@ -1015,6 +981,7 @@ Inicio
       caso 9
          limpatela
          tribonacci()
+
       caso 10
          limpatela
          escrevaL("FIM DO PROGRAMA.")
@@ -1026,12 +993,8 @@ Inicio
          escreval("|VALOR INVÁLIDO. TENTE NOVAMENTE |")
          escreval("|________________________________|")
 
+      Fimescolha
 
-      fimescolha
-
-   ate (opcao=10)
-
-
-
+   ate (opcaoMenuP=10)
 
 Fimalgoritmo
