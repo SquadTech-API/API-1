@@ -221,92 +221,112 @@ FimProcedimento
 // AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA DE NUMEROS PRIMOS
 
 procedimento ExibirMenuPrimos()
+
 inicio
-   escreval(" __________________________")
-   escreval("|                          |")
-   escreval("|   Menu: NUMEROS PRIMOS   |")
-   escreval("|__________________________|")
-   escreval("|         OPÇÕES           |")
-   escreval("|                          |")
-   escreval("| OPÇÃO 1 - Divisores      |")
-   escreval("| OPÇÃO 2 - Sequencia      |")
-   escreval("| OPÇÃO 3 - Limpar tela    |")
-   escreval("| OPÇÃO 4 - Definição      |")
-   escreval("| OPÇÃO 5 - Sair           |")
-   escreval("|__________________________|")
+   escreval(" _______________________________")
+   escreval("|                               |")
+   escreval("|     MENU: NUMEROS PRIMOS      |")
+   escreval("|_______________________________|")
+   escreval("|         OPÇÕES                |")
+   escreval("|                               |")
+   escreval("| OPÇÃO 1 - Posições Sequenciais|")
+   escreval("| OPÇÃO 2 - Sequencia nº Primos |")
+   escreval("| OPÇÃO 3 - Definição           |")
+   escreval("| OPÇÃO 4 - Sair                |")
+   escreval("|______________________________ |")
    escreva(" Digite uma opção => ")
    leia (OpcMenuPrimos)
 fimprocedimento
 
-procedimento MenuPrimos()
-inicio
-   ExibirMenuPrimos()
-   enquanto (OpcMenuPrimos > 5) ou (OpcMenuPrimos < 1) faca
-      limpatela
-      escreval("Escolha uma opção valida!")
-      ExibirMenuPrimos()
-   fimenquanto
-fimprocedimento
-
 procedimento OpcEscolhidaPrimos()
+var
+   DivisoresPrimos,ContadorPrimos,NumerosPrimos:inteiro
+   SegContadorPrimos1,Primos1,NumerosPrimos1,ContadorPrimos1:inteiro
+   QuantidadeDesejada, NumeroAtual, TotalPrimos, Divisor, ContadorDivisores: inteiro
 inicio
-   MenuPrimos()
-   escolha OpcMenuPrimos
-   caso 1
-      limpatela
-      escreval("")
-      escreval ("Digite um numero inteiro:")
-      leia(N)
-      C <- N
-      D <- 0
-      escreva("Divisores :")
-      repita
-         se (N%C=0)entao
-            escreva(C)
-            D<- D+1
-         fimse
-         C <-C-1
-      ate (C<1)
-      escreval ("")
-      se (D=2) entao
-         escreval(N, " É um numero primo!")
-      senao
-         escreval(N," Não é um numero primo!")
-      fimse
+   repita
+      ExibirMenuPrimos()
+      escolha OpcMenuPrimos
+      caso 1
+         limpatela
 
-   caso 2
-      limpatela
-      escreval("")
-      escreval(" Digite um numero:")
-      leia (N1)
-      escreval("Sequencia de numeros primos:")
-      para C1 <- 1 ate N1 faca
-         P1 <-0
-         para I1 <- 1 ate C1 faca
-            se (C1%I1=0) entao
-               P1 <- P1+1
+         QuantidadeDesejada <- 0
+         escreval("")
+         Enquanto (QuantidadeDesejada <1) faca
+         escreval("Digite quantos números primos você deseja ver:")
+         leia(QuantidadeDesejada)
+         limpatela
+         fimenquanto
+
+         NumeroAtual <- 2
+         TotalPrimos <- 0
+
+         escreval("Os primeiros ", QuantidadeDesejada, " números primos são:")
+
+         escreval("") // QUEBRA DE LINHA
+
+         enquanto (TotalPrimos < QuantidadeDesejada) faca
+            ContadorDivisores <- 0
+
+            para Divisor <- 1 ate NumeroAtual faca
+               se (NumeroAtual % Divisor = 0) entao
+                  ContadorDivisores <- ContadorDivisores + 1
+               fimse
+            fimpara
+
+            se (ContadorDivisores = 2) entao
+               TotalPrimos <- TotalPrimos + 1
+               escreval(TotalPrimos, "º posição: ", NumeroAtual)
+            fimse
+
+            NumeroAtual <- NumeroAtual + 1
+         fimenquanto
+
+      caso 2
+         limpatela
+
+         NumerosPrimos1 <- 0
+         escreval("")
+
+         enquanto (NumerosPrimos1 < 1) faca
+         escreval("Digite um número inteiro:")
+         leia (NumerosPrimos1)
+         limpatela
+         fimenquanto
+
+
+         escreval("Sequencia de numeros primos:")
+         para ContadorPrimos1 <- 1 ate NumerosPrimos1 faca
+            Primos1 <-0
+            para SegContadorPrimos1 <- 1 ate ContadorPrimos1 faca
+               se (ContadorPrimos1%SegContadorPrimos1=0) entao
+                  Primos1 <- Primos1+1
+               fimse
+            fimpara
+            se (Primos1=2) entao
+               escreva(ContadorPrimos1)
             fimse
          fimpara
-         se (P1=2) entao
-            escreva(C1)
-         fimse
-      fimpara
-      escreval("")
+         escreval("")
 
-   caso 3
-      limpatela
+      caso 3
+         limpatela
+         escreval(" ______________________________________________")
+         escreval("|                                              |")
+         escreval("|Um número primo é aquele que possue apenas 2  |")
+         escreval("|divisores , o numero 1 e ele mesmo.           |")
+         escreval("|______________________________________________|")
 
-   caso 4
-      limpatela
-      escreval(" ______________________________________________")
-      escreval("|                                              |")
-      escreval("|Um número primo é aquele que possue apenas 2  |")
-      escreval("|divisores , o numero 1 e ele mesmo.           |")
-      escreval("|______________________________________________|")
+      caso 4
+         escreval("")
 
-   caso 5
-      escreval("")
-   fimescolha
+      outrocaso
+         limpatela
+         escreval(" ____________________")
+         escreval("|  OPÇÃO INVALIDA!   |")
+         escreval("|____________________|")
+      fimescolha
+   até OpcMenuPrimos = 4
 fimprocedimento
 
 // AQUI COMEÇA OS PROCEDIMENTOS DA SEQUENCIA FATORIAL
