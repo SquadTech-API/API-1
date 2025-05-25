@@ -86,9 +86,12 @@ inicio
 
       caso 1
          limpatela
-         escreva("Digite um numero => ")
-         escreva ("")
-         leia (limite)
+         limite<-0
+         enquanto (limite<1) ou (limite>47) faca
+            escreva("Digite um numero => ")
+            escreva ("")
+            leia (limite)
+         fimenquanto
          fibonacci1 <--1
          fibonacci2 <-1
          contador <-0
@@ -103,10 +106,13 @@ inicio
          fimenquanto
       caso 2
          limpatela
-         escreval ("")
-         escreva("Digite a posição desejada na sequência de Fibonacci=> ")
-         escreva ("")
-         leia (limite)
+         limite<-0
+         enquanto (limite<1) ou (limite>47) faca
+            escreval ("")
+            escreva("Digite a posição desejada na sequência de Fibonacci=> ")
+            escreva ("")
+            leia (limite)
+         fimenquanto
          escreva ("")
          fibonacci1 <--1
          fibonacci2 <-1
@@ -253,9 +259,9 @@ inicio
          QuantidadeDesejada <- 0
          escreval("")
          Enquanto (QuantidadeDesejada <1) faca
-         escreval("Digite quantos números primos você deseja ver:")
-         leia(QuantidadeDesejada)
-         limpatela
+            escreval("Digite quantos números primos você deseja ver:")
+            leia(QuantidadeDesejada)
+            limpatela
          fimenquanto
 
          NumeroAtual <- 2
@@ -289,9 +295,9 @@ inicio
          escreval("")
 
          enquanto (NumerosPrimos1 < 1) faca
-         escreval("Digite um número inteiro:")
-         leia (NumerosPrimos1)
-         limpatela
+            escreval("Digite um número inteiro:")
+            leia (NumerosPrimos1)
+            limpatela
          fimenquanto
 
 
@@ -318,6 +324,7 @@ inicio
          escreval("|______________________________________________|")
 
       caso 4
+         limpatela
          escreval("")
 
       outrocaso
@@ -886,13 +893,13 @@ Inicio
          Tribonacci2<-0
          Tribonacci3<-1
          contadorTribonacci1<-0
+         escrevaL("")
          Enquanto (contadorTribonacci1 < numeroTribonacci) faca
             Tribonacci4<- Tribonacci1+Tribonacci2+Tribonacci3
             Tribonacci1<-Tribonacci2
             Tribonacci2<-Tribonacci3
             Tribonacci3<-Tribonacci4
             contadorTribonacci1 <- contadorTribonacci1 + 1
-            escreval ("")
          fimenquanto
          escreval (contadorTribonacci1,"º posição = ", Tribonacci4)
 
