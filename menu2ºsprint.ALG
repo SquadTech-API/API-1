@@ -1,11 +1,11 @@
 Algoritmo "SUPER CALC SQUAD"
+//  
+//  
 
 Var
 
-   opcaoMenuP, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci,contador,opcaofibonacci: inteiro
-   D,C,N,OpcMenuPrimos :inteiro
-   I1,P1,N1,C1: Inteiro
-   opcaofatorial, OpcaoQuadradosPerfeitos:inteiro
+   opcaoMenuP, opcaoMenuCubos,opcaoMenuAlternado,opcaoTribonacci,contador: inteiro
+   OpcMenuPrimos,opcaofatorial, OpcaoQuadradosPerfeitos,opcaofibonacci:inteiro
 
 
    // AQUI COMEÇA OS PROCEDIMENTO DO MENU PRINCIPAL
