@@ -5,7 +5,7 @@
 
 ## :mag_right: Índice
 
-[Equipe](#Equipe) / [Descrição do Projeto](#Descricao) / [Sobre a Sprint](#Sobre) / [Backlog](#Backlog) / [Backlog da Sprint](#Sprint/) / [MVP](#MVP) / [Manual do Usuário](#Manual)
+[Equipe](#Equipe) / [Descrição do Projeto](#Descricao) / [Sobre a Sprint](#Sobre) / [Backlog](#Backlog) / [Backlog da Sprint](#Sprint/) / [Manual do Usuário](#Manual)
 
 <span id="Equipe">
 
@@ -210,7 +210,7 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
                 <td>8</td>
                 <td>Apresentar a sequência (Geométrica) funcional, integrada ao código por meio de funções.</td>
                 <td>05/05</td>
-                <td>16/05/td>
+                <td>16/05</td>
                 <td>João Pedro</td>
                 <td>Manuela, Alexandre</td>
             </tr>
@@ -234,16 +234,6 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
     </table>
 
 → [Voltar ao topo](#topo)<br/>
-
-<span id="MVP"></span>
-
-# 💻 Apresentação do MVP:
-
-<details>
-  <summary><b>MVP DO PRODUTO</b></summary>
-  <img src="https://github.com/SquadTech-API/API-1/blob/6ec58ec50ebbf74dad8ab882c00f4169dacf34fa/document_5017145349375002105.mp4" alt="MVP">
-</details>
-
 
 → [Voltar ao topo](#topo)<br/>
 
@@ -297,11 +287,6 @@ Siga os passos abaixo para abrir e executar o código que você clonou do GitHub
  3. Buscar o Arquivo Clonado: Navegue até a pasta onde você clonou o repositório do GitHub e selecione o arquivo de código desejado.
 
  4. Executar o Código: Depois de abrir o código, pressione a tecla F9 para executar o programa.
-</details>
-
-<details>
-  <summary><b>MVP DO PRODUTO</b></summary>
-  <img src="https://github.com/SquadTech-API/API-1/blob/3d0a4503ea2f0e009c44b19dc195c57400b6b991/Manual%20Oficial.pdf" alt="Manual do usuario">
 </details>
 
 → [Voltar ao topo](#topo)<br/>
