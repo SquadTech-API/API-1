@@ -1,7 +1,7 @@
 <br id="topo">
 <h1 style="text-align: center"> FATEC Profº Jessen Vidal, SJC - 1º Semestre BANCO DE DADOS (2025)</h1>
 
-# 3ª Sprint - SQUAD TECH
+# 2ª Sprint - SQUAD TECH
 
 ## :mag_right: Índice
 
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td>Dev Team</td>
-      <td>Giovanna Marques</td>
+      <td>Giovana Marques</td>
       <td><a href="https://github.com/" target="_blank"><img src="https://github.com/SquadTech-API/API-1/blob/03776e842b61a213b64d769a97f280797670045b/github.svg" alt="GitHub"></a></td>
     </tr>
     <tr>
@@ -92,7 +92,6 @@ Este projeto tem como objetivo desenvolver uma aplicação de cálculo de sequê
   <li>Visualg (para desenvolvimento da aplicação)</li>
   <li>Git (para controle de versão)</li>
   <li>GitHub (para armazenamento de códigos e documentação)</li>
-  <li>Discord e WhatsApp (para comunição entre os membros)</li>
 </ul>
 
 → [Voltar ao topo](#topo)
@@ -100,7 +99,7 @@ Este projeto tem como objetivo desenvolver uma aplicação de cálculo de sequê
 <span id="Sobre">
 
 # :clipboard: Sobre a Sprint
-Nesta terceira e última entrega, foi definido pelo cliente a priorização do levantamento de requisitos (backlog), o planejamento do projeto e a entrega do MVP (mínimo produto viável). Com base nisso, priorizamos o desenvolvimento de três novas sequências matemáticas, além do aperfeiçoamento das entregas  apresentadas na primeira e segunda sprint. Também entregamos o menu principal do sistema. Na etapa final, todos os desenvolvedores participam das correções e testes, garantindo qualidade e estabilidade ao sistema.
+Nesta segunda entrega, foi definido pelo cliente a priorização do levantamento de requisitos (backlog), o planejamento do projeto e a entrega do MVP (mínimo produto viável). Com base nisso, priorizamos o desenvolvimento de três novas sequências matemáticas, além do aperfeiçoamento das três já apresentadas na primeira sprint. Também entregamos o menu principal do sistema. Na etapa final, todos os desenvolvedores participam das correções e testes, garantindo qualidade e estabilidade ao sistema
 
 <span id="Backlog"></span>
 
@@ -124,19 +123,19 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
     </tr>
     <tr>
       <td># 02</td>
-      <td>1ª Sprint</td>
+      <td>1º Sprint</td>
       <td>:green_circle: Baixa</td>
       <td>"Como usuário, quero calcular a sequência de Fibonacci, para que eu possa visualizar os números gerados de acordo com a fórmula clássica: F(n) = F(n-1) + F(n-2)."</td>
     </tr>
     <tr>
       <td># 03</td>
-      <td>2ª Sprint</td>
+      <td>2º Sprint</td>
       <td>:yellow_circle: Média</td>
       <td>"Como usuário, quero calcular os números triangulares, para que eu possa ver os números que formam triângulos equiláteros, calculados pela fórmula T(n) = n(n+1)/2."</td>
     </tr>
     <tr>
       <td># 04</td>
-      <td>1ª Sprint</td>
+      <td>1º Sprint</td>
       <td>:red_circle: Alta</td>
       <td>"Como usuário, quero calcular e exibir a sequência de números primos, para que eu possa identificar os números que são divisíveis apenas por 1 e por eles mesmos."</td>
     </tr>
@@ -148,31 +147,31 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
     </tr>
     <tr>
       <td># 06</td>
-      <td>1ª Sprint</td>
+      <td>1º Sprint</td>
       <td>:yellow_circle: Média</td>
       <td>"Como usuário, quero calcular os quadrados perfeitos, para que eu possa ver os números que são o quadrado de números inteiros."</td>
     </tr>
     <tr>
       <td># 07</td>
-      <td>2ª Sprint</td>
+      <td>2º Sprint</td>
       <td>:red_circle: Alta</td>
       <td>"Como usuário, quero calcular os cubos dos números inteiros, para que eu possa ver os números resultantes da multiplicação de um número inteiro por ele mesmo três vezes."</td>
     </tr>
     <tr>
       <td># 08</td>
-      <td>3ª Sprint</td>
+      <td>2º Sprint</td>
       <td>:green_circle: Baixa</td>
       <td>Como usuário, quero calcular a sequência geométrica de um número inicial (a₁) com uma razão (r), para que eu possa visualizar os números gerados pela fórmula: aₙ = a₁ * r^(n-1).</td>
     </tr>
     <tr>
       <td># 09</td>
-      <td>2ª Sprint</td>
+      <td>2º Sprint</td>
       <td>:green_circle: Baixa</td>
       <td>"Como usuário, quero calcular e visualizar uma sequência alternada, para que eu possa ver uma sequência que altera entre adição e subtração de números."</td>
     </tr>
     <tr>
       <td># 10</td>
-      <td>3ª Sprint</td>
+      <td>3º Sprint</td>
       <td>:red_circle: Alta</td>
       <td>"Como usuário, quero calcular a sequência de Tribonacci, para que eu possa visualizar os números gerados pela fórmula: T(n) = T(n-1) + T(n-2) + T(n-3)."</td>
     </tr>
@@ -199,34 +198,42 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
         </thead>
         <tbody>
             <tr>
-                <td>5</td>
-                <td>Apresentar a sequência (Fatorial) funcional, integrada ao código por meio de funções.</td>
-                <td>05/05</td>
-                <td>16/05</td>
-                <td>Eruano</td>
-                <td>Guilherme, Jhonatan</td>
+                <td>1</td>
+                <td>Entregar o menu pronto e totalmente funcional.</td>
+                <td>14/04</td>
+                <td>20/04</td>
+                <td>Guilherme</td>
+                <td>Jhonatan, Elder</td>
             </tr>
             <tr>
-                <td>8</td>
-                <td>Apresentar a sequência (Geométrica) funcional, integrada ao código por meio de funções.</td>
-                <td>05/05</td>
-                <td>16/05/td>
+                <td>3</td>
+                <td>Apresentar a sequência (Números triangulares) funcionando e sujeita a alterações.</td>
+                <td>14/04</td>
+                <td>21/04</td>
                 <td>João Pedro</td>
+                <td>Eruano, Giovanna</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Apresentar a sequência (Sequência de cubos) funcionando e sujeita a alterações.</td>
+                <td>14/04</td>
+                <td>21/04</td>
+                <td>Jhonatan</td>
+                <td>Guilherme, Alexandre</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Apresentar a sequência (Sequência alternada) funcionando e sujeita a alterações.</td>
+                <td>14/04</td>
+                <td>21/04</td>
+                <td>João Victor</td>
                 <td>Manuela, Alexandre</td>
             </tr>
             <tr>
-                <td>10</td>
-                <td>Apresentar a sequência (Tribonacci) funcional, integrada ao código por meio de funções.</td>
-                <td>05/05</td>
-                <td>16/05</td>
-                <td>Manuela</td>
-                <td>Elder, Giovanna</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td> Padronização de váriaveis, aprimoramento do código, alterações finais.</td>
-                <td>05/05</td>
-                <td>25/05</td>
+                <td>-</td>
+                <td>Correções de código, alterações, alterações de bugs.</td>
+                <td>23/04</td>
+                <td>25/04</td>
                 <td>Todos os desenvolvedores</td>
                 <td>Todos os desenvolvedores</td>
             </tr>
@@ -240,10 +247,42 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
 # 💻 Apresentação do MVP:
 
 <details>
-  <summary><b>MVP DO PRODUTO</b></summary>
-  <img src="https://github.com/SquadTech-API/API-1/blob/6ec58ec50ebbf74dad8ab882c00f4169dacf34fa/document_5017145349375002105.mp4" alt="MVP">
+  <summary><b>Menu:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/menu.jfif" alt="Menu">
 </details>
 
+<details>
+  <summary><b>Fibonacci:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/fibonacci1.jfif" alt="Fibonacci">
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/fibonacci2.jfif" alt="Fibonacci">
+</details>
+
+<details>
+  <summary><b>Sequência de Números Primos:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/numerosPrimos2.jfif" alt="Números Primos">
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/numerosPrimos1.jfif" alt="Números Primos">
+</details>
+
+<details>
+  <summary><b>Sequência de Quadrados Perfeitos:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/quadradosPerfeitos1.jfif" alt="Quadrados Perfeitos">
+  <img src="https://github.com/SquadTech-API/API-1/blob/bcea44d39c062670642df958daac3e4ef2321e01/quadradosPerfeitos2.jfif" alt="Quadrados Perfeitos">
+</details>
+
+<details>
+  <summary><b>Sequência de Números Triangulares:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/2f9a5f9b7e1f4f1c9666229a51c41c01ef611baf/triangulares.png" alt="Números Triangulares">
+</details>
+
+<details>
+  <summary><b>Sequência de Números Cúbicos:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/2f9a5f9b7e1f4f1c9666229a51c41c01ef611baf/cubicos.png" alt="Números Cúbicos">
+</details>
+
+<details>
+  <summary><b>Sequência de Números Alternados:</b></summary>
+  <img src="https://github.com/SquadTech-API/API-1/blob/2f9a5f9b7e1f4f1c9666229a51c41c01ef611baf/alternada.png" alt="Números Alternados">
+</details>
 
 → [Voltar ao topo](#topo)<br/>
 
@@ -297,11 +336,6 @@ Siga os passos abaixo para abrir e executar o código que você clonou do GitHub
  3. Buscar o Arquivo Clonado: Navegue até a pasta onde você clonou o repositório do GitHub e selecione o arquivo de código desejado.
 
  4. Executar o Código: Depois de abrir o código, pressione a tecla F9 para executar o programa.
-</details>
-
-<details>
-  <summary><b>MVP DO PRODUTO</b></summary>
-  <img src="https://github.com/SquadTech-API/API-1/blob/3d0a4503ea2f0e009c44b19dc195c57400b6b991/Manual%20Oficial.pdf" alt="Manual do usuario">
 </details>
 
 → [Voltar ao topo](#topo)<br/>
