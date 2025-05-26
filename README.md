@@ -288,7 +288,7 @@ Siga os passos abaixo para abrir e executar o código que você clonou do GitHub
 </details>
 
 <details>
-  <summary><b>Manual da Super Calq Squad:</b></summary>
+  <summary><b>Manual da Super Calc Squad:</b></summary>
   <a href="https://github.com/SquadTech-API/API-1/blob/698e73416ea1bc0cb7d35fe022ac5dd262200141/src/Manual%20Oficial.pdf" target="_blank">Manual</a>
 </details>
 
