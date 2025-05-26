@@ -183,7 +183,7 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
 
 <span id="Sprint"></span>
 
-# :hourglass_flowing_sand: Backlog da Sprint 2:
+# :hourglass_flowing_sand: Backlog da Sprint 3:
 
 <table border="1">
   <table>
@@ -232,8 +232,6 @@ Nesta terceira e última entrega, foi definido pelo cliente a priorização do l
             </tr>
         </tbody>
     </table>
-
-→ [Voltar ao topo](#topo)<br/>
 
 → [Voltar ao topo](#topo)<br/>
 
@@ -287,6 +285,11 @@ Siga os passos abaixo para abrir e executar o código que você clonou do GitHub
  3. Buscar o Arquivo Clonado: Navegue até a pasta onde você clonou o repositório do GitHub e selecione o arquivo de código desejado.
 
  4. Executar o Código: Depois de abrir o código, pressione a tecla F9 para executar o programa.
+</details>
+
+<details>
+  <summary><b>Manual da Super Calq Squad:</b></summary>
+  <a href="https://github.com/SquadTech-API/API-1/blob/698e73416ea1bc0cb7d35fe022ac5dd262200141/src/Manual%20Oficial.pdf" target="_blank">Manual</a>
 </details>
 
 → [Voltar ao topo](#topo)<br/>
